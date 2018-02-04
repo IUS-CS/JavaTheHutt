@@ -9,8 +9,9 @@ h2 {
 }
 
 h3 {
-    text-align: right;
+    text-align: left;
 }
+html {background-color: powderblue}
 
 .welcome{
 	background-color: powderblue;
