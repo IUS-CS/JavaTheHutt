@@ -1,0 +1,102 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="paulkell">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="standards.css">
+    <title>Chemistry</title>
+</head>
+
+<body>
+<h1>
+Chemistry Suite
+</h1>
+
+<input type="text" id="result">
+
+<div class = "number_buttons">
+    <button type="button" id="button0" value="0" onclick="buttonClick(this.value);" >0</button>
+    <button type="button" id="button1" value="1" onclick="buttonClick(this.value);" >1</button>
+    <button type="button" id="button2" value="2" onclick="buttonClick(this.value);" >2</button>
+    <button type="button" id="button3" value="3" onclick="buttonClick(this.value);" >3</button>
+    <button type="button" id="button4" value="4" onclick="buttonClick(this.value);" >4</button>
+    <button type="button" id="button5" value="5" onclick="buttonClick(this.value);" >5</button>
+    <button type="button" id="button6" value="6" onclick="buttonClick(this.value);" >6</button>
+    <button type="button" id="button7" value="7" onclick="buttonClick(this.value);" >7</button>
+    <button type="button" id="button8" value="8" onclick="buttonClick(this.value);" >8</button>
+    <button type="button" id="button9" value="9" onclick="buttonClick(this.value);" >9</button>
+</div>
+
+<div class="operations_buttons">
+    <button type="button" id = "button_plus" value="+" onclick="buttonClick(this.value);" >+</button>
+    <button type="button" id = "button_minus" value="-" onclick="buttonClick(this.value);" >-</button>
+    <button type="button" id = "button_mult" value="*" onclick="buttonClick(this.value);" >*</button>
+    <button type="button" id = "button_div" value="/" onclick="buttonClick(this.value);" >/</button>
+    <button type="button" id = "button_C" onclick= "clear_math();" >C</button>
+    <button type="button" id = "button_equals" onclick="compute();" >=</button>
+</div>
+
+<div class="memory_buttons">
+    <button type="button" id = "button_Memory_store" onclick="memory_store();" >M+</button>
+    <button type="button" id = "button_Memory_minus" onclick="memory_minus();" >M-</button>
+    <button type="button" id = "button_Memory_recall" onclick="memory_recall();" >MR</button>
+    <button type="button" id = "button_Memory_clear" onclick="memory_clear();" >MC</button>
+</div>
+
+</body>
+</html>
+
+<script>
+
+var math_string = "";
+var memory_string = "";
+
+	document.addEventListener('keypress', function(event){
+		if(event.which === 13){
+			compute();
+		}
+	});
+
+function buttonClick(button_value){		
+	math_string += button_value;
+	document.getElementById("result").value = math_string;
+}
+
+function compute(){
+	document.getElementById("result").value = eval(math_string);
+}
+
+function clear_math(){
+    math_string = "";
+    document.getElementById("result").value = math_string;
+}
+
+function memory_store(){
+    if(memory_string === "")
+    {
+        memory_string = eval(math_string);
+    }
+    else{
+        math_string = eval(math_string+ "+" + memory_string);
+        compute();
+    }
+}
+
+function memory_minus(){
+    if(memory_string != ""){
+        math_string = eval(math_string) - memory_string;
+        compute();
+    }   
+}
+
+function memory_recall(){
+    document.getElementById("result").value = memory_string;
+}
+
+function memory_clear(){
+    memory_string = "";
+}
+</script>
