@@ -1,6 +1,6 @@
 
 
-##Chemistry Analysis
+## Chemistry Analysis
 
 The goal of this project is to determine the results of chemical reactions based on elements/chemicals provided as input by a user. 
 
