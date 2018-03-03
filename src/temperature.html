@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="author" content="paulkell">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="standards.css">
+        <title>Temperature Converter</title>
+    </head>
+    <body>
+    <hl>
+        Enter data for one field
+    </hl>
+
+    <div class="inputs">
+        <label>Fahrenheit<input type="text" id="Fahrenheit"></label>
+        <br>
+        <label>Celsius<input type="text" id="Celsius"></label>
+        <br>
+        <label>Kelvin<input type="text" id="Kelvin"></label>
+        <br>
+        <label>Rankine<input type="text" id="Rankine"></label>
+    </div>
+        <button type="button" id = "compute" onclick="convert();" >Convert</button>
+    </body>
+</html>
+
+<script>
+    function convert(){
+        if(document.getElementById("Fahrenheit").value != ''){
+            var fahrenheit = document.getElementById("Fahrenheit").value;
+            var celsius = (fahrenheit - 32) * (5/9);
+            
+            document.getElementById("Celsius").value = celsius;
+            document.getElementById("Kelvin").value = celsius + 273.15;
+            document.getElementById("Rankine").value = parseFloat(fahrenheit) + 459.67;
+        }
+        else if(document.getElementById("Celsius").value != ''){
+            var celsius = document.getElementById("Celsius").value;
+            var fahrenheit = celsius *(9/5) + 32;
+            
+            document.getElementById("Fahrenheit").value = fahrenheit;
+            document.getElementById("Kelvin").value = parseFloat(celsius) + 273.15;
+            document.getElementById("Rankine").value = fahrenheit + 459.67;
+        }
+        else if(document.getElementById("Kelvin").value != ''){
+            var kelvin = document.getElementById("Kelvin").value;
+            var celsius = kelvin - 273.15;
+            var fahrenheit = celsius *(9/5) + 32;
+            
+            document.getElementById("Celsius").value = celsius;
+            document.getElementById("Fahrenheit").value = celsius *(9/5) + 32;
+            if(kelvin == 0){
+                document.getElementById("Rankine").value = 0;
+            }
+            else{
+                document.getElementById("Rankine").value = fahrenheit + 459.67;
+            }
+        }
+        else if(document.getElementById("Rankine").value != ''){
+            var rankine = document.getElementById("Rankine").value;
+            var fahrenheit = rankine - 459.67;
+            var celsius = (fahrenheit - 32) * (5/9);
+            
+            document.getElementById("Fahrenheit").value = fahrenheit;
+            document.getElementById("Celsius").value = celsius;
+            if(rankine == 0){
+                document.getElementById("Kelvin").value = 0;
+            }
+            else{
+                document.getElementById("Kelvin").value = celsius + 273.15;
+            }
+        }
+    }
+</script>
