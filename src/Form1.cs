@@ -69,19 +69,34 @@ namespace Browser
             }
             return url;
         }
-        /*
-        DataSet ds = new DataSet();
-        DataTable dt = new DataTable();
-        SqlConnection conn = new SqlConnection();
-        //conn.ConnectionString = "User ID=postgres; Password=123; Host=localhost Port=5432; Database=Users; Pooling=true; Min Pool Size=100; Connection Lifetime=0;";
-        conn.ConnectionString = "Server=postgresql://localhost; User ID=postgres; Password=123; Database=Users;";
-			conn.Open();
 
-			SqlCommand command = new SqlCommand("Select * From user_info", conn);
-        command.Connection.Open();
-			command.ExecuteNonQuery();
-			System.Console.WriteLine(conn.ToString());
-            */
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InfoForm about = new InfoForm();
+
+            about.Add("Created by: Paul Kelley, Jonathan Steininger");
+            about.SetText(about.Print());
+            about.ShowDialog();
+            about.Close();
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+        /*
+DataSet ds = new DataSet();
+DataTable dt = new DataTable();
+SqlConnection conn = new SqlConnection();
+//conn.ConnectionString = "User ID=postgres; Password=123; Host=localhost Port=5432; Database=Users; Pooling=true; Min Pool Size=100; Connection Lifetime=0;";
+conn.ConnectionString = "Server=postgresql://localhost; User ID=postgres; Password=123; Database=Users;";
+conn.Open();
+
+SqlCommand command = new SqlCommand("Select * From user_info", conn);
+command.Connection.Open();
+command.ExecuteNonQuery();
+System.Console.WriteLine(conn.ToString());
+*/
 
 
     }
