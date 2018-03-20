@@ -58,6 +58,10 @@
         {
             this.infoLabel.Text = NewData;
         }
+        public void SetName(string NewData)
+        {
+            this.Text = NewData;
+        }
 
         #endregion
 

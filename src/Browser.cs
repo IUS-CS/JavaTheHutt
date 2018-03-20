@@ -11,9 +11,18 @@ namespace Browser
         [STAThread]
         static void Main()
         {
+            bool LoginEnabled = true; // this setting determines whether a user will be met with a login screen when application runs
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            if (LoginEnabled)
+            {
+                Application.Run(new Login());
+            }
+            else
+            {
+                Application.Run(new KSY());
+            }
         }
     }
 }
