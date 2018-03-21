@@ -24,10 +24,16 @@ namespace Browser
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            KSY browser = new KSY();
-            this.Hide();
-            browser.ShowDialog();
-            this.Close();
+            String username = UserNameBox.Text;
+            String passphrase = PassphraseBox.Text;
+
+            if (true) // if(passphrase == user.passphrase)
+            {
+                KSY browser = new KSY();
+                this.Hide();
+                browser.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

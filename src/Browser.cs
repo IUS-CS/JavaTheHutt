@@ -15,6 +15,7 @@ namespace Browser
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             if (LoginEnabled)
             {
                 Application.Run(new Login());
