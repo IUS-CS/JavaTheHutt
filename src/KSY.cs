@@ -11,10 +11,19 @@ using System.IO;
 
 namespace Browser
 {
-    public partial class Form1 : Form
+    public partial class KSY : Form
     {
-        public Form1()
+        String username;
+
+        public KSY()
         {
+            username = "guest";
+            InitializeComponent();
+        }
+
+        public KSY(String name)
+        {
+            username = name;
             InitializeComponent();
         }
 
@@ -69,19 +78,51 @@ namespace Browser
             }
             return url;
         }
-        /*
-        DataSet ds = new DataSet();
-        DataTable dt = new DataTable();
-        SqlConnection conn = new SqlConnection();
-        //conn.ConnectionString = "User ID=postgres; Password=123; Host=localhost Port=5432; Database=Users; Pooling=true; Min Pool Size=100; Connection Lifetime=0;";
-        conn.ConnectionString = "Server=postgresql://localhost; User ID=postgres; Password=123; Database=Users;";
-			conn.Open();
 
-			SqlCommand command = new SqlCommand("Select * From user_info", conn);
-        command.Connection.Open();
-			command.ExecuteNonQuery();
-			System.Console.WriteLine(conn.ToString());
-            */
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+
+            about.ShowDialog();
+            about.Close();
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void userInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InfoForm user = new InfoForm();
+
+            user.Add("Current User: " + username);
+            user.SetText(user.Print());
+            user.SetName("User Info");
+            user.ShowDialog();
+            user.Close();
+        }
+
+        private void temperatureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TemperatureConverter temp = new TemperatureConverter();
+
+            temp.ShowDialog();
+            temp.Close();
+        }
+        /*
+DataSet ds = new DataSet();
+DataTable dt = new DataTable();
+SqlConnection conn = new SqlConnection();
+//conn.ConnectionString = "User ID=postgres; Password=123; Host=localhost Port=5432; Database=Users; Pooling=true; Min Pool Size=100; Connection Lifetime=0;";
+conn.ConnectionString = "Server=postgresql://localhost; User ID=postgres; Password=123; Database=Users;";
+conn.Open();
+
+SqlCommand command = new SqlCommand("Select * From user_info", conn);
+command.Connection.Open();
+command.ExecuteNonQuery();
+System.Console.WriteLine(conn.ToString());
+*/
 
 
     }
