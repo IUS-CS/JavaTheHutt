@@ -24,7 +24,7 @@ namespace Browser
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            Form1 browser = new Form1();
+            KSY browser = new KSY();
             this.Hide();
             browser.ShowDialog();
             this.Close();
