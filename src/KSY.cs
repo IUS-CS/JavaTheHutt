@@ -27,31 +27,36 @@ namespace Browser
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void WebSearch_Click(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(URLBox.Text))
+            {
+                URLControler(URLBox.Text);
+            }
         }
 
         private void URLBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(e.KeyChar == 13)
             {
-                String url  = URLBox.Text;
-
-                if (url.StartsWith("l:"))
-                {
-                    string FileName = url.Substring(2);
-                    string curDir = Directory.GetCurrentDirectory();
-                    this.webBrowser1.Url = new Uri(String.Format("file:///{0}/{1}", curDir, FileName));
-                }
-                else if (url.StartsWith("C:") || url.StartsWith("F:") || url.StartsWith("D:"))
-                {
-                    this.webBrowser1.Url = new Uri(String.Format("file:///{0}", url));
-                }
-                else
-                {
-                    webBrowser1.Navigate(URLAdjust(url));
-                }
+                URLControler(URLBox.Text);
+            }
+        }
+        private void URLControler(String url)
+        {
+            if (url.StartsWith("l:"))
+            {
+                string FileName = url.Substring(2);
+                string curDir = Directory.GetCurrentDirectory();
+                this.webBrowser1.Url = new Uri(String.Format("file:///{0}/{1}", curDir, FileName));
+            }
+            else if (url.StartsWith("C:") || url.StartsWith("F:") || url.StartsWith("D:"))
+            {
+                this.webBrowser1.Url = new Uri(String.Format("file:///{0}", url));
+            }
+            else
+            {
+                webBrowser1.Navigate(URLAdjust(url));
             }
         }
 
@@ -110,6 +115,15 @@ namespace Browser
             temp.ShowDialog();
             temp.Close();
         }
+
+        private void calculatorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Calculator calc = new Calculator();
+
+            calc.ShowDialog();
+            calc.Close();
+        }
+
         /*
 DataSet ds = new DataSet();
 DataTable dt = new DataTable();

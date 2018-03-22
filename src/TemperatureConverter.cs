@@ -19,56 +19,56 @@ namespace Browser
 
         private void Temp_Convert_Click(object sender, EventArgs e)
         {
-            if (FahrenheitLabel.Text.CompareTo("") != 1)
+            if (!string.IsNullOrEmpty(FahrenheitBox.Text))
             {
-                double fahrenheit = Double.Parse(FahrenheitLabel.Text);
-                double celsius = (fahrenheit - 32) * (5 / 9);
+                double fahrenheit = Double.Parse(FahrenheitBox.Text);
+                double celsius = (fahrenheit - 32) * (5 / 9.0);
 
-                CelsiusLabel.Text = celsius.ToString();
-                KelvinLabel.Text =  (celsius + 273.15).ToString();
-                RankineLabel.Text = (fahrenheit + 459.67).ToString();
+                CelsiusBox.Text = celsius.ToString();
+                KelvinBox.Text =  (celsius + 273.15).ToString();
+                RankineBox.Text = (fahrenheit + 459.67).ToString();
             }
-            else if (CelsiusLabel.Text.CompareTo("") != 1)
+            else if (!string.IsNullOrEmpty(CelsiusBox.Text))
             {
-                double celsius = Double.Parse(CelsiusLabel.Text);
-                double fahrenheit = celsius * (9 / 5) + 32;
+                double celsius = Double.Parse(CelsiusBox.Text);
+                double fahrenheit = celsius * (9 / 5.0) + 32;
 
-                FahrenheitLabel.Text = fahrenheit.ToString();
-                KelvinLabel.Text = (celsius + 273.15).ToString();
-                RankineLabel.Text = (fahrenheit + 459.67).ToString();
+                FahrenheitBox.Text = fahrenheit.ToString();
+                KelvinBox.Text = (celsius + 273.15).ToString();
+                RankineBox.Text = (fahrenheit + 459.67).ToString();
             }
-            else if (KelvinLabel.Text.CompareTo("") != 1)
+            else if (!string.IsNullOrEmpty(KelvinBox.Text))
             {
-                double kelvin = Double.Parse(KelvinLabel.Text);
+                double kelvin = Double.Parse(KelvinBox.Text);
                 double celsius = kelvin - 273.15;
-                double fahrenheit = celsius * (9 / 5) + 32;
+                double fahrenheit = celsius * (9 / 5.0) + 32;
 
-                CelsiusLabel.Text = celsius.ToString();
-                FahrenheitLabel.Text =  (celsius * (9 / 5) + 32).ToString();
+                CelsiusBox.Text = celsius.ToString();
+                FahrenheitBox.Text =  (celsius * (9 / 5.0) + 32).ToString();
                 if (kelvin == 0)
                 {
-                    RankineLabel.Text =  "0";
+                    RankineBox.Text =  "0";
                 }
                 else
                 {
-                    RankineLabel.Text = (fahrenheit + 459.67).ToString();
+                    RankineBox.Text = (fahrenheit + 459.67).ToString();
                 }
             }
-            else if (RankineLabel.Text.CompareTo("") != 1)
+            else if (!string.IsNullOrEmpty(RankineBox.Text))
             {
-                double rankine = Double.Parse(RankineLabel.Text);
+                double rankine = Double.Parse(RankineBox.Text);
                 double fahrenheit = rankine - 459.67;
-                double celsius = (fahrenheit - 32) * (5 / 9);
+                double celsius = (fahrenheit - 32) * (5 / 9.0);
 
-                FahrenheitLabel.Text = fahrenheit.ToString();
-                CelsiusLabel.Text = celsius.ToString();
+                FahrenheitBox.Text = fahrenheit.ToString();
+                CelsiusBox.Text = celsius.ToString();
                 if (rankine == 0)
                 {
-                    KelvinLabel.Text = "0";
+                    KelvinBox.Text = "0";
                 }
                 else
                 {
-                    KelvinLabel.Text = (celsius + 273.15).ToString();
+                    KelvinBox.Text = (celsius + 273.15).ToString();
                 }
             }
         }
