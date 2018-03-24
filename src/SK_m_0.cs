@@ -11,17 +11,20 @@ using System.IO;
 
 namespace Browser
 {
-    public partial class KSY : Form
+    public partial class SK_m_0 : Form
     {
         String username;
+        private String CurrentPage = "";
+        private Stack<String> ForwardStack = new Stack<String>();
+        private Stack<String> BackStack = new Stack<String>();
 
-        public KSY()
+        public SK_m_0()
         {
             username = "guest";
             InitializeComponent();
         }
 
-        public KSY(String name)
+        public SK_m_0(String name)
         {
             username = name;
             InitializeComponent();
@@ -37,13 +40,19 @@ namespace Browser
 
         private void URLBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == 13)
+            if (e.KeyChar == 13)
             {
                 URLControler(URLBox.Text);
             }
         }
         private void URLControler(String url)
         {
+            if (CurrentPage != "")
+            {
+                BackStack.Push(CurrentPage);
+            }
+            CurrentPage = url;
+
             if (url.StartsWith("l:"))
             {
                 string FileName = url.Substring(2);
@@ -122,6 +131,36 @@ namespace Browser
 
             calc.ShowDialog();
             calc.Close();
+        }
+
+        private void buttonForward_Click(object sender, EventArgs e)
+        {
+            if (ForwardStack.Count > 0)
+            {
+                String url = ForwardStack.Pop();
+                BackStack.Push(CurrentPage);
+                URLBox.Text = url;
+                URLControler(url);
+            }
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            if (BackStack.Count > 0)
+            {
+                String url = BackStack.Pop();
+                ForwardStack.Push(CurrentPage);
+                URLBox.Text = url;
+                CurrentPage = "";
+                URLControler(url);
+            }
+        }
+
+        private void functionEvalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FunctionEval evaluation = new FunctionEval();
+            evaluation.ShowDialog();
+            evaluation.Close();
         }
 
         /*
