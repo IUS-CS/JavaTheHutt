@@ -1,6 +1,6 @@
 ﻿namespace Browser
 {
-    partial class KSY
+    partial class SK_m_0
     {
         /// <summary>
         /// Required designer variable.
@@ -36,14 +36,17 @@
             this.userInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TemperatureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.WebSearch = new System.Windows.Forms.Button();
             this.calculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WebSearch = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonForward = new System.Windows.Forms.Button();
+            this.functionEvalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // URLBox
             // 
-            this.URLBox.Location = new System.Drawing.Point(517, 12);
+            this.URLBox.Location = new System.Drawing.Point(517, 27);
             this.URLBox.Name = "URLBox";
             this.URLBox.Size = new System.Drawing.Size(176, 20);
             this.URLBox.TabIndex = 0;
@@ -51,10 +54,10 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(12, 38);
+            this.webBrowser1.Location = new System.Drawing.Point(12, 53);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(681, 291);
+            this.webBrowser1.Size = new System.Drawing.Size(681, 307);
             this.webBrowser1.TabIndex = 1;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
@@ -81,14 +84,14 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // userInfoToolStripMenuItem
             // 
             this.userInfoToolStripMenuItem.Name = "userInfoToolStripMenuItem";
-            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.userInfoToolStripMenuItem.Text = "User Info";
             this.userInfoToolStripMenuItem.Click += new System.EventHandler(this.userInfoToolStripMenuItem_Click);
             // 
@@ -96,7 +99,8 @@
             // 
             this.ToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TemperatureToolStripMenuItem,
-            this.calculatorToolStripMenuItem});
+            this.calculatorToolStripMenuItem,
+            this.functionEvalToolStripMenuItem});
             this.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem";
             this.ToolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.ToolsToolStripMenuItem.Text = "Tools";
@@ -108,16 +112,6 @@
             this.TemperatureToolStripMenuItem.Text = "Temperature";
             this.TemperatureToolStripMenuItem.Click += new System.EventHandler(this.temperatureToolStripMenuItem_Click);
             // 
-            // WebSearch
-            // 
-            this.WebSearch.Location = new System.Drawing.Point(436, 10);
-            this.WebSearch.Name = "WebSearch";
-            this.WebSearch.Size = new System.Drawing.Size(75, 23);
-            this.WebSearch.TabIndex = 3;
-            this.WebSearch.Text = "Search";
-            this.WebSearch.UseVisualStyleBackColor = true;
-            this.WebSearch.Click += new System.EventHandler(this.WebSearch_Click);
-            // 
             // calculatorToolStripMenuItem
             // 
             this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
@@ -125,20 +119,59 @@
             this.calculatorToolStripMenuItem.Text = "Calculator";
             this.calculatorToolStripMenuItem.Click += new System.EventHandler(this.calculatorToolStripMenuItem_Click);
             // 
-            // KSY
+            // WebSearch
+            // 
+            this.WebSearch.Location = new System.Drawing.Point(436, 27);
+            this.WebSearch.Name = "WebSearch";
+            this.WebSearch.Size = new System.Drawing.Size(75, 23);
+            this.WebSearch.TabIndex = 3;
+            this.WebSearch.Text = "Search";
+            this.WebSearch.UseVisualStyleBackColor = true;
+            this.WebSearch.Click += new System.EventHandler(this.WebSearch_Click);
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(12, 27);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(29, 23);
+            this.buttonBack.TabIndex = 4;
+            this.buttonBack.Text = "<-";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // buttonForward
+            // 
+            this.buttonForward.Location = new System.Drawing.Point(47, 27);
+            this.buttonForward.Name = "buttonForward";
+            this.buttonForward.Size = new System.Drawing.Size(29, 23);
+            this.buttonForward.TabIndex = 5;
+            this.buttonForward.Text = "->";
+            this.buttonForward.UseVisualStyleBackColor = true;
+            this.buttonForward.Click += new System.EventHandler(this.buttonForward_Click);
+            // 
+            // functionEvalToolStripMenuItem
+            // 
+            this.functionEvalToolStripMenuItem.Name = "functionEvalToolStripMenuItem";
+            this.functionEvalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.functionEvalToolStripMenuItem.Text = "Function Eval";
+            this.functionEvalToolStripMenuItem.Click += new System.EventHandler(this.functionEvalToolStripMenuItem_Click);
+            // 
+            // SK_m_0
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(705, 341);
+            this.ClientSize = new System.Drawing.Size(705, 364);
+            this.Controls.Add(this.buttonForward);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.WebSearch);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.URLBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "KSY";
-            this.Text = "KSY";
+            this.Name = "SK_m_0";
+            this.Text = "SK_m_0";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -158,6 +191,9 @@
         private System.Windows.Forms.ToolStripMenuItem TemperatureToolStripMenuItem;
         private System.Windows.Forms.Button WebSearch;
         private System.Windows.Forms.ToolStripMenuItem calculatorToolStripMenuItem;
+        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonForward;
+        private System.Windows.Forms.ToolStripMenuItem functionEvalToolStripMenuItem;
     }
 }
 
