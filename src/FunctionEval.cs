@@ -1,38 +1,82 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Browser
 {
-    public partial class FunctionEval : Form
+    class FunctionEval
     {
-        public FunctionEval()
-        {
-            InitializeComponent();
-        }
-
-        private void buttonEval_Click(object sender, EventArgs e)
-        {           
-            try
-            {
-                labelResult.Text = "f(" + VarBox.Text + ") = " + Evaluate(FunctionBox.Text, Double.Parse(VarBox.Text));
-            }
-            catch(Exception ex)
-            {
-                labelResult.Text = ex.ToString();
-            }
-        }
         public double Evaluate(String expression, double value)
         {
-            Calculator calc = new Calculator();
+            Format(expression);
+            expression.Replace("x", value.ToString());
+            return Compute_Recursion(expression);
+        }
 
-            return calc.Compute(expression.Replace("x", value.ToString()));
+        public double Evaluate(String input)
+        {
+            return Compute_Recursion(Format(input));
+        }
+
+        private double Compute_Recursion(String CurrentResult)
+        {
+            int index;
+
+            if (!CurrentResult.Contains('*') && !CurrentResult.Contains('/') && !CurrentResult.Contains('+') && !CurrentResult.Contains('-') && !CurrentResult.Contains('^'))
+            {
+                return Double.Parse(CurrentResult);
+            }
+            else if (CurrentResult.Contains('+'))
+            {
+                index = CurrentResult.IndexOf('+');
+
+                return Compute_Recursion(CurrentResult.Substring(0, index)) + Compute_Recursion(CurrentResult.Substring(index + 1, CurrentResult.Length - (index + 1)));
+            }
+            else if (CurrentResult.Contains('-'))
+            {
+                index = CurrentResult.IndexOf('-');
+
+                return Compute_Recursion(CurrentResult.Substring(0, index)) - Compute_Recursion(CurrentResult.Substring(index + 1, CurrentResult.Length - (index + 1)));
+            }
+            else if (CurrentResult.Contains('*'))
+            {
+                index = CurrentResult.IndexOf('*');
+
+                return Compute_Recursion(CurrentResult.Substring(0, index)) * Compute_Recursion(CurrentResult.Substring(index + 1, CurrentResult.Length - (index + 1)));
+            }
+            else if (CurrentResult.Contains('/'))
+            {
+                index = CurrentResult.IndexOf('/');
+
+                return Compute_Recursion(CurrentResult.Substring(0, index)) / Compute_Recursion(CurrentResult.Substring(index + 1, CurrentResult.Length - (index + 1)));
+            }
+            else
+            {
+                index = CurrentResult.IndexOf('^');
+
+                return Math.Pow(Compute_Recursion(CurrentResult.Substring(0, index)), Compute_Recursion(CurrentResult.Substring(index + 1, CurrentResult.Length - (index + 1))));
+            }
+        }
+        
+        private String Format(String input)
+        {
+
+            return input.Replace("e", Math.E.ToString()).Replace("𝜋", Math.PI.ToString());
+        }
+
+        public double Euler(String func, double x, double y, double end)
+        {
+            double step = .0001;
+
+            while (x < end)
+            {
+                y = y + step * Evaluate(func, x);
+                x += step;
+            }
+
+            return y;
         }
     }
 }

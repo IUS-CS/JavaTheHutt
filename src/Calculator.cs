@@ -104,12 +104,29 @@ namespace Browser
             resultBox.Text = result;
         }
 
+        private void buttonPow_Click(object sender, EventArgs e)
+        {
+            result += "^";
+            resultBox.Text = result;
+        }
+
         private void buttonDecimal_Click(object sender, EventArgs e)
         {
             result += ".";
             resultBox.Text = result;
         }
 
+        private void eButton_Click(object sender, EventArgs e)
+        {
+            result += "e";
+            resultBox.Text = result;
+        }
+
+        private void buttonPI_Click(object sender, EventArgs e)
+        {
+            result += "𝜋";
+            resultBox.Text = result;
+        }
         private void buttonBack_Click(object sender, EventArgs e)
         {
             if (result.Length > 1)
@@ -134,13 +151,15 @@ namespace Browser
         {
             try
             {
-                double result_number = Compute(result);
+                FunctionEval function = new FunctionEval();
+
+                double result_number = function.Evaluate(result);
                 result = result_number.ToString();
                 resultBox.Text = result;
             }
             catch(Exception ex)
             {
-                resultBox.Text = "Error: "+ex;
+                resultBox.Text = "Error: " + ex;
             }
         }
 
@@ -152,51 +171,15 @@ namespace Browser
 
                 try
                 {
-                    double result_number = Compute(result);
+                    FunctionEval function = new FunctionEval();
+
+                    double result_number = function.Evaluate(result);
                     resultBox.Text = result_number.ToString();
                 }
                 catch (Exception ex)
                 {
                     resultBox.Text = "Error: " + ex;
                 }
-            }
-        }
-
-        private double Compute(String CurrentResult)
-        {
-            int index;
-
-            if (!CurrentResult.Contains('*') && !CurrentResult.Contains('/') && !CurrentResult.Contains('+') && !CurrentResult.Contains('-'))
-            {
-                return Double.Parse(CurrentResult);
-            }
-            else if (CurrentResult.Contains('+'))
-            {
-                index = CurrentResult.IndexOf('+');
-
-                return Compute(CurrentResult.Substring(0, index)) + Compute(CurrentResult.Substring(index + 1, CurrentResult.Length - (index + 1)));
-            }
-            else if (CurrentResult.Contains('-'))
-            {
-                index = CurrentResult.IndexOf('-');
-
-                return Compute(CurrentResult.Substring(0, index)) - Compute(CurrentResult.Substring(index + 1, CurrentResult.Length - (index + 1)));
-            }
-            else if (CurrentResult.Contains('*'))
-            {
-                index = CurrentResult.IndexOf('*');
-
-                return Compute(CurrentResult.Substring(0, index)) * Compute(CurrentResult.Substring(index + 1, CurrentResult.Length - (index + 1)));
-            }
-            else if (CurrentResult.Contains('/'))
-            {
-                index = CurrentResult.IndexOf('/');
-
-                return Compute(CurrentResult.Substring(0, index)) / Compute(CurrentResult.Substring(index + 1, CurrentResult.Length - (index + 1)));
-            }
-            else
-            {
-                return 0;
             }
         }
     }

@@ -34,18 +34,21 @@
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TemperatureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.functionEvalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WebSearch = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonForward = new System.Windows.Forms.Button();
-            this.functionEvalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eulersMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // URLBox
             // 
+            this.URLBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.URLBox.Location = new System.Drawing.Point(517, 27);
             this.URLBox.Name = "URLBox";
             this.URLBox.Size = new System.Drawing.Size(176, 20);
@@ -54,6 +57,9 @@
             // 
             // webBrowser1
             // 
+            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser1.Location = new System.Drawing.Point(12, 53);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
@@ -76,7 +82,8 @@
             // 
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
-            this.userInfoToolStripMenuItem});
+            this.userInfoToolStripMenuItem,
+            this.historyToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
             this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.FileToolStripMenuItem.Text = "File";
@@ -95,12 +102,20 @@
             this.userInfoToolStripMenuItem.Text = "User Info";
             this.userInfoToolStripMenuItem.Click += new System.EventHandler(this.userInfoToolStripMenuItem_Click);
             // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.historyToolStripMenuItem.Text = "History";
+            this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
+            // 
             // ToolsToolStripMenuItem
             // 
             this.ToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TemperatureToolStripMenuItem,
             this.calculatorToolStripMenuItem,
-            this.functionEvalToolStripMenuItem});
+            this.functionEvalToolStripMenuItem,
+            this.eulersMethodToolStripMenuItem});
             this.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem";
             this.ToolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.ToolsToolStripMenuItem.Text = "Tools";
@@ -119,8 +134,16 @@
             this.calculatorToolStripMenuItem.Text = "Calculator";
             this.calculatorToolStripMenuItem.Click += new System.EventHandler(this.calculatorToolStripMenuItem_Click);
             // 
+            // functionEvalToolStripMenuItem
+            // 
+            this.functionEvalToolStripMenuItem.Name = "functionEvalToolStripMenuItem";
+            this.functionEvalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.functionEvalToolStripMenuItem.Text = "Function Eval";
+            this.functionEvalToolStripMenuItem.Click += new System.EventHandler(this.functionEvalToolStripMenuItem_Click);
+            // 
             // WebSearch
             // 
+            this.WebSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.WebSearch.Location = new System.Drawing.Point(436, 27);
             this.WebSearch.Name = "WebSearch";
             this.WebSearch.Size = new System.Drawing.Size(75, 23);
@@ -149,12 +172,12 @@
             this.buttonForward.UseVisualStyleBackColor = true;
             this.buttonForward.Click += new System.EventHandler(this.buttonForward_Click);
             // 
-            // functionEvalToolStripMenuItem
+            // eulersMethodToolStripMenuItem
             // 
-            this.functionEvalToolStripMenuItem.Name = "functionEvalToolStripMenuItem";
-            this.functionEvalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.functionEvalToolStripMenuItem.Text = "Function Eval";
-            this.functionEvalToolStripMenuItem.Click += new System.EventHandler(this.functionEvalToolStripMenuItem_Click);
+            this.eulersMethodToolStripMenuItem.Name = "eulersMethodToolStripMenuItem";
+            this.eulersMethodToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.eulersMethodToolStripMenuItem.Text = "Euler\'s Method";
+            this.eulersMethodToolStripMenuItem.Click += new System.EventHandler(this.eulersMethodToolStripMenuItem_Click);
             // 
             // SK_m_0
             // 
@@ -194,6 +217,8 @@
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonForward;
         private System.Windows.Forms.ToolStripMenuItem functionEvalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eulersMethodToolStripMenuItem;
     }
 }
 

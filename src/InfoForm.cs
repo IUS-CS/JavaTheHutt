@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Browser
@@ -17,32 +16,12 @@ namespace Browser
             InitializeComponent();
         }
 
-        private void InfoForm_Load(object sender, EventArgs e)
+        public void Add(List<String> data)
         {
-
-        }
-
-        List<String> info = new List<String>();
-
-        public String Print()
-        {
-            string output = "";
-
-            for(int i = 0; i < info.Count; i++)
+            for (int i = 0; i < data.Count; i++)
             {
-                output += info.ElementAt(i) + "\n";
+                InfoBox.Text += data.ElementAt(i) + Environment.NewLine;
             }
-            return output;
-        }
-
-        public void Add(String data)
-        {
-            info.Add(data);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
