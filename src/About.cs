@@ -15,7 +15,7 @@ namespace Browser
         {
             InitializeComponent();
             this.Text = String.Format("About");
-            this.labelProductName.Text = "KSY";
+            this.labelProductName.Text = "SK_m_0";
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
@@ -103,6 +103,11 @@ namespace Browser
         #endregion
 
         private void labelProductName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void About_Load(object sender, EventArgs e)
         {
 
         }

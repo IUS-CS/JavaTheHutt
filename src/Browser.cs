@@ -11,7 +11,7 @@ namespace Browser
         [STAThread]
         static void Main()
         {
-            bool LoginEnabled = true; // this setting determines whether a user will be met with a login screen when application runs
+            bool LoginEnabled = false; // this setting determines whether a user will be met with a login screen when application runs
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -22,7 +22,7 @@ namespace Browser
             }
             else
             {
-                Application.Run(new KSY());
+                Application.Run(new SK_m_0());
             }
         }
     }

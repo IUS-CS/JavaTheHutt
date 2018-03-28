@@ -17,6 +17,7 @@ namespace Browser
         private String CurrentPage = "";
         private Stack<String> ForwardStack = new Stack<String>();
         private Stack<String> BackStack = new Stack<String>();
+        private List<String> history = new List<String>();
 
         public SK_m_0()
         {
@@ -45,8 +46,12 @@ namespace Browser
                 URLControler(URLBox.Text);
             }
         }
+
         private void URLControler(String url)
         {
+            history.Add(url);
+            //history.Add((history.Count + 1).ToString().PadLeft((history.Count + 1).ToString().Length+1, '0') + ": " + url);
+
             if (CurrentPage != "")
             {
                 BackStack.Push(CurrentPage);
@@ -65,10 +70,10 @@ namespace Browser
             }
             else
             {
-                webBrowser1.Navigate(URLAdjust(url));
+                webBrowser1.Navigate(url);
             }
         }
-
+        /*
         private String URLAdjust(String url)
         {
             if (url.StartsWith("http") && !url.Contains("www."))
@@ -92,7 +97,7 @@ namespace Browser
             }
             return url;
         }
-
+        */
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             About about = new About();
@@ -109,9 +114,10 @@ namespace Browser
         private void userInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InfoForm user = new InfoForm();
+            List<String> userList = new List<String>();
 
-            user.Add("Current User: " + username);
-            user.SetText(user.Print());
+            userList.Add("Current User: " + username);
+            user.Add(userList);
             user.SetName("User Info");
             user.ShowDialog();
             user.Close();
@@ -139,6 +145,7 @@ namespace Browser
             {
                 String url = ForwardStack.Pop();
                 BackStack.Push(CurrentPage);
+                CurrentPage = "";
                 URLBox.Text = url;
                 URLControler(url);
             }
@@ -158,25 +165,27 @@ namespace Browser
 
         private void functionEvalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FunctionEval evaluation = new FunctionEval();
+            FunctionEvalForm evaluation = new FunctionEvalForm();
             evaluation.ShowDialog();
             evaluation.Close();
         }
 
-        /*
-DataSet ds = new DataSet();
-DataTable dt = new DataTable();
-SqlConnection conn = new SqlConnection();
-//conn.ConnectionString = "User ID=postgres; Password=123; Host=localhost Port=5432; Database=Users; Pooling=true; Min Pool Size=100; Connection Lifetime=0;";
-conn.ConnectionString = "Server=postgresql://localhost; User ID=postgres; Password=123; Database=Users;";
-conn.Open();
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InfoForm historyForm = new InfoForm();
 
-SqlCommand command = new SqlCommand("Select * From user_info", conn);
-command.Connection.Open();
-command.ExecuteNonQuery();
-System.Console.WriteLine(conn.ToString());
-*/
+            historyForm.Add(history);
+            historyForm.SetName("History");
+            historyForm.ShowDialog();
+            historyForm.Close();
+        }
 
+        private void eulersMethodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EulerForm ef = new EulerForm();
 
+            ef.ShowDialog();
+            ef.Close();
+        }
     }
 }
