@@ -32,9 +32,9 @@
             this.CelsiusLabel = new System.Windows.Forms.Label();
             this.KelvinLabel = new System.Windows.Forms.Label();
             this.RankineLabel = new System.Windows.Forms.Label();
-            this.Fahrenheit_box = new System.Windows.Forms.TextBox();
+            this.FahrenheitBox = new System.Windows.Forms.TextBox();
             this.CelsiusBox = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.KelvinBox = new System.Windows.Forms.TextBox();
             this.RankineBox = new System.Windows.Forms.TextBox();
             this.Temp_Convert = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -75,12 +75,12 @@
             this.RankineLabel.TabIndex = 3;
             this.RankineLabel.Text = "Rankine";
             // 
-            // Fahrenheit_box
+            // FahrenheitBox
             // 
-            this.Fahrenheit_box.Location = new System.Drawing.Point(136, 48);
-            this.Fahrenheit_box.Name = "Fahrenheit_box";
-            this.Fahrenheit_box.Size = new System.Drawing.Size(100, 20);
-            this.Fahrenheit_box.TabIndex = 4;
+            this.FahrenheitBox.Location = new System.Drawing.Point(136, 48);
+            this.FahrenheitBox.Name = "FahrenheitBox";
+            this.FahrenheitBox.Size = new System.Drawing.Size(100, 20);
+            this.FahrenheitBox.TabIndex = 4;
             // 
             // CelsiusBox
             // 
@@ -89,12 +89,12 @@
             this.CelsiusBox.Size = new System.Drawing.Size(100, 20);
             this.CelsiusBox.TabIndex = 5;
             // 
-            // textBox3
+            // KelvinBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(136, 121);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 6;
+            this.KelvinBox.Location = new System.Drawing.Point(136, 121);
+            this.KelvinBox.Name = "KelvinBox";
+            this.KelvinBox.Size = new System.Drawing.Size(100, 20);
+            this.KelvinBox.TabIndex = 6;
             // 
             // RankineBox
             // 
@@ -120,9 +120,9 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.Temp_Convert);
             this.Controls.Add(this.RankineBox);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.KelvinBox);
             this.Controls.Add(this.CelsiusBox);
-            this.Controls.Add(this.Fahrenheit_box);
+            this.Controls.Add(this.FahrenheitBox);
             this.Controls.Add(this.RankineLabel);
             this.Controls.Add(this.KelvinLabel);
             this.Controls.Add(this.CelsiusLabel);
@@ -140,9 +140,9 @@
         private System.Windows.Forms.Label CelsiusLabel;
         private System.Windows.Forms.Label KelvinLabel;
         private System.Windows.Forms.Label RankineLabel;
-        private System.Windows.Forms.TextBox Fahrenheit_box;
+        private System.Windows.Forms.TextBox FahrenheitBox;
         private System.Windows.Forms.TextBox CelsiusBox;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox KelvinBox;
         private System.Windows.Forms.TextBox RankineBox;
         private System.Windows.Forms.Button Temp_Convert;
     }
