@@ -37,6 +37,7 @@
             // 
             // UserNameBox
             // 
+            this.UserNameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UserNameBox.Location = new System.Drawing.Point(122, 88);
             this.UserNameBox.MaxLength = 20;
             this.UserNameBox.Name = "UserNameBox";
@@ -45,6 +46,7 @@
             // 
             // PassphraseBox
             // 
+            this.PassphraseBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PassphraseBox.Location = new System.Drawing.Point(122, 140);
             this.PassphraseBox.MaxLength = 20;
             this.PassphraseBox.Name = "PassphraseBox";
@@ -54,6 +56,7 @@
             // 
             // name_label
             // 
+            this.name_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.name_label.AutoSize = true;
             this.name_label.Location = new System.Drawing.Point(40, 88);
             this.name_label.Name = "name_label";
@@ -63,6 +66,7 @@
             // 
             // pass_label
             // 
+            this.pass_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pass_label.AutoSize = true;
             this.pass_label.Location = new System.Drawing.Point(39, 140);
             this.pass_label.Name = "pass_label";
@@ -72,7 +76,8 @@
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(122, 200);
+            this.LoginButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LoginButton.Location = new System.Drawing.Point(109, 200);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
             this.LoginButton.TabIndex = 4;

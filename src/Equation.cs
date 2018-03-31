@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChemEqnBalancer
+namespace Browser
 {
     class Equation
     {
-        public  List<String> elements = new List<string>();
+        public List<String> elements = new List<string>();
         //public  List<String[,]> results = new List<String[,]>();
         //public static String[] left;
         //public static String[] right;
@@ -34,7 +34,7 @@ namespace ChemEqnBalancer
             return s;
         }
 
-         public String[] GetLeft()
+        public String[] GetLeft()
         {
             string temp;
             temp = eqn.Substring(0, eqn.IndexOf("="));
@@ -129,7 +129,7 @@ namespace ChemEqnBalancer
             return result;
         }
 
-        private  int indexOf(string[] s1, string s2)
+        private int indexOf(string[] s1, string s2)
         {
             for (int i = 0; i < s1.Length; i++)
             {
@@ -141,7 +141,7 @@ namespace ChemEqnBalancer
             return -1;
         }//array
 
-        private  int indexOf(string[,] s1, string s2)
+        private int indexOf(string[,] s1, string s2)
         {
             for (int i = 0; i < s1.Length / 2; i++)
             {

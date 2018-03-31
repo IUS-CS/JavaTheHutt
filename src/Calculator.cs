@@ -116,6 +116,18 @@ namespace Browser
             resultBox.Text = result;
         }
 
+        private void buttonOpenParen_Click(object sender, EventArgs e)
+        {
+            result += "(";
+            resultBox.Text = result;
+        }
+
+        private void buttonCloseParen_Click(object sender, EventArgs e)
+        {
+            result += ")";
+            resultBox.Text = result;
+        }
+
         private void eButton_Click(object sender, EventArgs e)
         {
             result += "e";

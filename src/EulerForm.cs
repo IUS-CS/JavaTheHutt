@@ -23,11 +23,18 @@ namespace Browser
 
             try
             {
-                String[] values = InitialPointBox.Text.Split(',');
-                double x = Double.Parse(values[0].Trim());
-                double y = Double.Parse(values[1].Trim());
+                if (!string.IsNullOrEmpty(FunctionBox.Text) && !string.IsNullOrEmpty(InitialPointBox.Text) && !string.IsNullOrEmpty(EndValueBox.Text))
+                {
+                    String[] values = InitialPointBox.Text.Replace("(", "").Replace(")", "").Split(',');
+                    double x = Double.Parse(values[0].Trim());
+                    double y = Double.Parse(values[1].Trim());
 
-                ResultBox.Text = func.Euler(FunctionBox.Text, x, y, Double.Parse(EndValueBox.Text)).ToString();
+                    ResultBox.Text = func.Euler(FunctionBox.Text, x, y, Double.Parse(EndValueBox.Text)).ToString();
+                }
+                else
+                {
+                    ResultBox.Text = "All data required";
+                }
             }
             catch(Exception ex)
             {

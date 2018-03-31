@@ -10,8 +10,9 @@ namespace Browser
     {
         public double Evaluate(String expression, double value)
         {
-            Format(expression);
-            expression.Replace("x", value.ToString());
+            expression = Format(expression);
+            expression = expression.Replace("x", value.ToString());
+
             return Compute_Recursion(expression);
         }
 
@@ -59,11 +60,24 @@ namespace Browser
                 return Math.Pow(Compute_Recursion(CurrentResult.Substring(0, index)), Compute_Recursion(CurrentResult.Substring(index + 1, CurrentResult.Length - (index + 1))));
             }
         }
-        
+
         private String Format(String input)
         {
+            int index1;
+            int index2;
 
-            return input.Replace("e", Math.E.ToString()).Replace("𝜋", Math.PI.ToString());
+            input = input.Replace("e", Math.E.ToString()).Replace("𝜋", Math.PI.ToString());
+
+            while (input.Contains("("))
+            {
+                index1 = input.LastIndexOf('(');
+                String firstPart = input.Substring(0, index1);
+                String lastPart = input.Substring(index1, input.Length - index1);
+                index2 = lastPart.IndexOf(')') + firstPart.Length;
+
+                input = input.Substring(0, index1) + Compute_Recursion(input.Substring(index1 + 1, index2 - (index1 + 1)) + input.Substring(index2 + 1, input.Length - (index2 + 1)));
+            }
+            return input;
         }
 
         public double Euler(String func, double x, double y, double end)
