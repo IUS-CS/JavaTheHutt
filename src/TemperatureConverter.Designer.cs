@@ -78,37 +78,41 @@
             // FahrenheitBox
             // 
             this.FahrenheitBox.Location = new System.Drawing.Point(136, 48);
+            this.FahrenheitBox.MaxLength = 100;
             this.FahrenheitBox.Name = "FahrenheitBox";
             this.FahrenheitBox.Size = new System.Drawing.Size(100, 20);
-            this.FahrenheitBox.TabIndex = 4;
+            this.FahrenheitBox.TabIndex = 0;
             // 
             // CelsiusBox
             // 
             this.CelsiusBox.Location = new System.Drawing.Point(136, 83);
+            this.CelsiusBox.MaxLength = 100;
             this.CelsiusBox.Name = "CelsiusBox";
             this.CelsiusBox.Size = new System.Drawing.Size(100, 20);
-            this.CelsiusBox.TabIndex = 5;
+            this.CelsiusBox.TabIndex = 1;
             // 
             // KelvinBox
             // 
             this.KelvinBox.Location = new System.Drawing.Point(136, 121);
+            this.KelvinBox.MaxLength = 100;
             this.KelvinBox.Name = "KelvinBox";
             this.KelvinBox.Size = new System.Drawing.Size(100, 20);
-            this.KelvinBox.TabIndex = 6;
+            this.KelvinBox.TabIndex = 2;
             // 
             // RankineBox
             // 
             this.RankineBox.Location = new System.Drawing.Point(136, 163);
+            this.RankineBox.MaxLength = 100;
             this.RankineBox.Name = "RankineBox";
             this.RankineBox.Size = new System.Drawing.Size(100, 20);
-            this.RankineBox.TabIndex = 7;
+            this.RankineBox.TabIndex = 3;
             // 
             // Temp_Convert
             // 
             this.Temp_Convert.Location = new System.Drawing.Point(103, 213);
             this.Temp_Convert.Name = "Temp_Convert";
             this.Temp_Convert.Size = new System.Drawing.Size(75, 23);
-            this.Temp_Convert.TabIndex = 8;
+            this.Temp_Convert.TabIndex = 4;
             this.Temp_Convert.Text = "Convert";
             this.Temp_Convert.UseVisualStyleBackColor = true;
             this.Temp_Convert.Click += new System.EventHandler(this.Temp_Convert_Click);

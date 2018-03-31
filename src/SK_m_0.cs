@@ -187,5 +187,20 @@ namespace Browser
             ef.ShowDialog();
             ef.Close();
         }
+
+        private void chemicalBalancerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EquationBalanceForm eq = new EquationBalanceForm();
+            eq.ShowDialog();
+            eq.Close();
+        }
+
+        private void molarMassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MolarMassForm mf = new MolarMassForm();
+
+            mf.ShowDialog();
+            mf.Close();
+        }
     }
 }

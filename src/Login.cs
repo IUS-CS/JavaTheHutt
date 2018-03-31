@@ -41,20 +41,13 @@ namespace Browser
                 {
                     if (passphrase.Equals(row[0]))
                     {
-                        SK_m_0 browser = new SK_m_0();
+                        SK_m_0 browser = new SK_m_0(username);
                         this.Hide();
                         browser.ShowDialog();
                         this.Close();
                     }
                 }
             }
-            //if (dt.ToString() == passphrase) // if(passphrase == user.passphrase)
-            //{
-            //    SK_m_0 browser = new SK_m_0();
-            //    this.Hide();
-            //    browser.ShowDialog();
-            //    this.Close();
-            //}
         }
     }
 }

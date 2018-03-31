@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChemEqnBalancer
+namespace Browser
 {
     class ChemEqnMatrix
     {
@@ -37,7 +37,7 @@ namespace ChemEqnBalancer
 
             PopulateMatrix(results, left.Length, right.Length, eqn);
         }
-        private  int indexOf(string[] s1, string s2)
+        private int indexOf(string[] s1, string s2)
         {
             for (int i = 0; i < s1.Length; i++)
             {
@@ -49,7 +49,7 @@ namespace ChemEqnBalancer
             return -1;
         }//array
 
-        private  int indexOf(string[,] s1, string s2)
+        private int indexOf(string[,] s1, string s2)
         {
             for (int i = 0; i < s1.Length / 2; i++)
             {
@@ -63,7 +63,7 @@ namespace ChemEqnBalancer
 
         private void PopulateMatrix(List<String[,]> results, int lSize, int rSize, Equation eqn)
         {
-             matrix = new double[eqn.elements.Count + 1, lSize + rSize + 1];
+            matrix = new double[eqn.elements.Count + 1, lSize + rSize + 1];
 
             matrix[eqn.elements.Count, 0] = 1;
             matrix[eqn.elements.Count, lSize + rSize] = 1;
@@ -100,7 +100,7 @@ namespace ChemEqnBalancer
             return adjCol;
         }
 
-         double[] GetDiagonal()
+        double[] GetDiagonal()
         {
             double[] diagonal = new double[matrix.GetLength(0)];
             for (int i = 0; i < diagonal.Length; i++)
@@ -123,7 +123,7 @@ namespace ChemEqnBalancer
             return lcm;
         }
 
-         int[] DetermineCoefficients(double[,] matrix)
+        int[] DetermineCoefficients(double[,] matrix)
         {
             double[] solution = GetAdjunctCol();
             double[] diagonal = GetDiagonal();
@@ -150,7 +150,7 @@ namespace ChemEqnBalancer
             return solutionI;
         }
 
-         static double LCM(double a, double b)
+        static double LCM(double a, double b)
         {
             double lcm = 0;
             lcm = a * b;
@@ -159,7 +159,7 @@ namespace ChemEqnBalancer
         }
 
 
-         string InsertCoeff(int[] answer, String[] left, String[] right)
+        string InsertCoeff(int[] answer, String[] left, String[] right)
         {
             StringBuilder final = new StringBuilder();
             int i = 0;
@@ -170,7 +170,8 @@ namespace ChemEqnBalancer
                     left[i] = answer[i].ToString() + left[i];
                 }
             }
-            for (int j = 0; j < right.Length; j++)
+            // for (int j = 0; j < right.Length; j++)
+            for (int j = 0; j < answer.Length - left.Length; j++)
             {
                 if (answer[i] > 1)
                 {
@@ -209,7 +210,7 @@ namespace ChemEqnBalancer
             return InsertCoeff(DetermineCoefficients(matrix), left, right);
         }
 
-         private void SwapRows( int r1, int r2)
+        private void SwapRows(int r1, int r2)
         {
             double temp;
             for (int i = 0; i < matrix.GetLength(1); i++)
@@ -220,7 +221,7 @@ namespace ChemEqnBalancer
             }
         }
 
-        private void FindAndSwap( int currentRow)
+        private void FindAndSwap(int currentRow)
         {
             double smallest = double.MaxValue;
             int currentRowLeadingCoeffPos = -1;
@@ -265,12 +266,12 @@ namespace ChemEqnBalancer
             }
             if (currentRow != rowToSwitch)
             {
-                SwapRows( currentRow, rowToSwitch);
+                SwapRows(currentRow, rowToSwitch);
                 return;
             }
         }
 
-        private double[] FindScalars( int row1, int row2)
+        private double[] FindScalars(int row1, int row2)
         {
             double[] lcm = new double[2];
             int posLCR1 = 0;
@@ -309,7 +310,7 @@ namespace ChemEqnBalancer
             return a;
         }
 
-        private void RowAddScalar1( int sourceRow, int destRow, double[] scalar)
+        private void RowAddScalar1(int sourceRow, int destRow, double[] scalar)
         {
             if (Math.Abs(scalar[0]) < .001)
             {
@@ -322,7 +323,7 @@ namespace ChemEqnBalancer
             return;
         }
 
-        private double GCDofRow( int pos)
+        private double GCDofRow(int pos)
         {
             double gcd = matrix[pos, 0];
             for (int i = 1; i < matrix.GetLength(1); i++)
@@ -332,9 +333,9 @@ namespace ChemEqnBalancer
             return gcd;
         }
 
-        private void ToLowestTermsR( int pos)
+        private void ToLowestTermsR(int pos)
         {
-            double gcd = GCDofRow( pos);
+            double gcd = GCDofRow(pos);
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
                 matrix[pos, i] /= gcd;
@@ -375,7 +376,7 @@ namespace ChemEqnBalancer
                     matrix[i, j] = matrix[i, j] * signs[i];
                 }
             }
-            
+
         }
 
         private void ToLowestTermsM()
@@ -392,16 +393,16 @@ namespace ChemEqnBalancer
             double[] scalar1;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                FindAndSwap( i);
+                FindAndSwap(i);
                 for (int j = i + 1; j < matrix.GetLength(0); j++)
                 {
                     //matrix = ToPositive(ToLowestTermsM(matrix));
                     //Console.WriteLine("\nI " + i + " j " + j);
                     //Console.WriteLine("FIRST");
                     //DisplayMatrix(matrix);
-                    scalar1 = FindScalars( i, j);
+                    scalar1 = FindScalars(i, j);
                     //Console.WriteLine("Sclar " + scalar);
-                    RowAddScalar1( i, j, scalar1);
+                    RowAddScalar1(i, j, scalar1);
                     //Console.WriteLine("LAST");
                     //DisplayMatrix(matrix);
                 }
@@ -440,7 +441,7 @@ namespace ChemEqnBalancer
                     //DisplayMatrix(matrix);
                     scalar1 = FindPositionalScalars(i, j);
                     //Console.WriteLine("Sclar " + scalar1[0] + " " + scalar1[1]);
-                    RowAddScalar1( i, j, scalar1);
+                    RowAddScalar1(i, j, scalar1);
                     //Console.WriteLine("LAST");
                     //DisplayMatrix(matrix);
                 }

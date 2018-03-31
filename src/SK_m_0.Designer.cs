@@ -39,10 +39,12 @@
             this.TemperatureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.functionEvalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eulersMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chemicalBalancerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WebSearch = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonForward = new System.Windows.Forms.Button();
-            this.eulersMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.molarMassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +117,9 @@
             this.TemperatureToolStripMenuItem,
             this.calculatorToolStripMenuItem,
             this.functionEvalToolStripMenuItem,
-            this.eulersMethodToolStripMenuItem});
+            this.eulersMethodToolStripMenuItem,
+            this.chemicalBalancerToolStripMenuItem,
+            this.molarMassToolStripMenuItem});
             this.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem";
             this.ToolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.ToolsToolStripMenuItem.Text = "Tools";
@@ -123,23 +127,37 @@
             // TemperatureToolStripMenuItem
             // 
             this.TemperatureToolStripMenuItem.Name = "TemperatureToolStripMenuItem";
-            this.TemperatureToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.TemperatureToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.TemperatureToolStripMenuItem.Text = "Temperature";
             this.TemperatureToolStripMenuItem.Click += new System.EventHandler(this.temperatureToolStripMenuItem_Click);
             // 
             // calculatorToolStripMenuItem
             // 
             this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
-            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.calculatorToolStripMenuItem.Text = "Calculator";
             this.calculatorToolStripMenuItem.Click += new System.EventHandler(this.calculatorToolStripMenuItem_Click);
             // 
             // functionEvalToolStripMenuItem
             // 
             this.functionEvalToolStripMenuItem.Name = "functionEvalToolStripMenuItem";
-            this.functionEvalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.functionEvalToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.functionEvalToolStripMenuItem.Text = "Function Eval";
             this.functionEvalToolStripMenuItem.Click += new System.EventHandler(this.functionEvalToolStripMenuItem_Click);
+            // 
+            // eulersMethodToolStripMenuItem
+            // 
+            this.eulersMethodToolStripMenuItem.Name = "eulersMethodToolStripMenuItem";
+            this.eulersMethodToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.eulersMethodToolStripMenuItem.Text = "Euler\'s Method";
+            this.eulersMethodToolStripMenuItem.Click += new System.EventHandler(this.eulersMethodToolStripMenuItem_Click);
+            // 
+            // chemicalBalancerToolStripMenuItem
+            // 
+            this.chemicalBalancerToolStripMenuItem.Name = "chemicalBalancerToolStripMenuItem";
+            this.chemicalBalancerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.chemicalBalancerToolStripMenuItem.Text = "Chemical Balancer";
+            this.chemicalBalancerToolStripMenuItem.Click += new System.EventHandler(this.chemicalBalancerToolStripMenuItem_Click);
             // 
             // WebSearch
             // 
@@ -172,12 +190,12 @@
             this.buttonForward.UseVisualStyleBackColor = true;
             this.buttonForward.Click += new System.EventHandler(this.buttonForward_Click);
             // 
-            // eulersMethodToolStripMenuItem
+            // molarMassToolStripMenuItem
             // 
-            this.eulersMethodToolStripMenuItem.Name = "eulersMethodToolStripMenuItem";
-            this.eulersMethodToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.eulersMethodToolStripMenuItem.Text = "Euler\'s Method";
-            this.eulersMethodToolStripMenuItem.Click += new System.EventHandler(this.eulersMethodToolStripMenuItem_Click);
+            this.molarMassToolStripMenuItem.Name = "molarMassToolStripMenuItem";
+            this.molarMassToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.molarMassToolStripMenuItem.Text = "Molar Mass";
+            this.molarMassToolStripMenuItem.Click += new System.EventHandler(this.molarMassToolStripMenuItem_Click);
             // 
             // SK_m_0
             // 
@@ -219,6 +237,8 @@
         private System.Windows.Forms.ToolStripMenuItem functionEvalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eulersMethodToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chemicalBalancerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem molarMassToolStripMenuItem;
     }
 }
 
