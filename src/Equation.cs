@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ChemEqnBalancer
 {
-    class Equation
+    /// <summary>
+    /// A class largely used for parsing out the terms of an unbalanced chemical equation.
+    /// </summary>
+    public class Equation
     {
         public  List<String> elements = new List<string>();
         //public  List<String[,]> results = new List<String[,]>();
@@ -14,11 +17,20 @@ namespace ChemEqnBalancer
         //public static String[] right;
         static string eqn;
 
+        /// <summary>
+        /// Constructs an equation object based on the input string.
+        /// </summary>
+        /// <param name="s">A string representing a valid, unbalanced chemical equation.</param>
         public Equation(string s)
         {
             eqn = s;
         }
 
+        /// <summary>
+        /// Determines the right side of an equation.
+        /// </summary>
+        /// <returns>Returns a string array containing each of the separate
+        /// terms in the right-hand side of the equation.</returns>
         public String[] GetRight()
         {
             string temp;
@@ -34,6 +46,11 @@ namespace ChemEqnBalancer
             return s;
         }
 
+        /// <summary>
+        /// Determines the left side of an equation.
+        /// </summary>
+        /// <returns>Returns a string array containing each of the separate
+        /// terms in the left-hand side of the equation.</returns>
          public String[] GetLeft()
         {
             string temp;
@@ -49,7 +66,14 @@ namespace ChemEqnBalancer
             return s;
         }
 
-        int NumOcc(string s, string c)
+        /// <summary>
+        /// Determines the number of times that a particualar sequence of characters 
+        /// appears in a larger string.
+        /// </summary>
+        /// <param name="s">The string which may contain other particular substrings.</param>
+        /// <param name="c">The substring of interest.</param>
+        /// <returns>Returns the number of times that a substring appears in a larger string.</returns>
+        public int NumOcc(string s, string c)
         {
             int count = 0;
             for (int i = 0; i < s.Length; i++)
@@ -62,6 +86,14 @@ namespace ChemEqnBalancer
             return count;
         }
 
+        /// <summary>
+        /// Parses an input string to determine what elements are in it and the number of times
+        /// that element appears in it.
+        /// </summary>
+        /// <param name="eqn">The string containing the elements to be parsed.</param>
+        /// <returns>Returns a row array containing the elements on the top row
+        /// and the number of times each element appears on the bottom row, directly
+        /// beneath its respective element.</returns>
         public string[,] Parse(string eqn)
         {
             char[] chem = eqn.ToCharArray();
@@ -129,7 +161,14 @@ namespace ChemEqnBalancer
             return result;
         }
 
-        private  int indexOf(string[] s1, string s2)
+        /// <summary>
+        /// Finds the index of the occurence of string of interest in a string array.
+        /// </summary>
+        /// <param name="s1">The string array that may contain s2.</param>
+        /// <param name="s2">The string whose index you wish to find.</param>
+        /// <returns>Returns the index of the occurence of string of interest in a 
+        /// string array and -1 if not found.</returns>
+        public int indexOf(string[] s1, string s2)
         {
             for (int i = 0; i < s1.Length; i++)
             {
@@ -141,7 +180,14 @@ namespace ChemEqnBalancer
             return -1;
         }//array
 
-        private  int indexOf(string[,] s1, string s2)
+        /// <summary>
+        /// Finds the index of the occurence of string of interest in a 2-D string array.
+        /// </summary>
+        /// <param name="s1">The 2-D string array that may contain s2.</param>
+        /// <param name="s2">The string whose index you wish to find.</param>
+        /// <returns>Returns the index of the occurence of string of interest in a 2-D 
+        /// string array. Returns -1 if not found.</returns>
+        public int indexOf(string[,] s1, string s2)
         {
             for (int i = 0; i < s1.Length / 2; i++)
             {
