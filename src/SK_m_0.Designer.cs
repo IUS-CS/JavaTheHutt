@@ -41,10 +41,11 @@
             this.functionEvalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eulersMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chemicalBalancerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.molarMassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WebSearch = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonForward = new System.Windows.Forms.Button();
-            this.molarMassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.heunsMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,9 +118,10 @@
             this.TemperatureToolStripMenuItem,
             this.calculatorToolStripMenuItem,
             this.functionEvalToolStripMenuItem,
-            this.eulersMethodToolStripMenuItem,
             this.chemicalBalancerToolStripMenuItem,
-            this.molarMassToolStripMenuItem});
+            this.molarMassToolStripMenuItem,
+            this.eulersMethodToolStripMenuItem,
+            this.heunsMethodToolStripMenuItem});
             this.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem";
             this.ToolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.ToolsToolStripMenuItem.Text = "Tools";
@@ -159,6 +161,13 @@
             this.chemicalBalancerToolStripMenuItem.Text = "Chemical Balancer";
             this.chemicalBalancerToolStripMenuItem.Click += new System.EventHandler(this.chemicalBalancerToolStripMenuItem_Click);
             // 
+            // molarMassToolStripMenuItem
+            // 
+            this.molarMassToolStripMenuItem.Name = "molarMassToolStripMenuItem";
+            this.molarMassToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.molarMassToolStripMenuItem.Text = "Molar Mass";
+            this.molarMassToolStripMenuItem.Click += new System.EventHandler(this.molarMassToolStripMenuItem_Click);
+            // 
             // WebSearch
             // 
             this.WebSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -190,12 +199,12 @@
             this.buttonForward.UseVisualStyleBackColor = true;
             this.buttonForward.Click += new System.EventHandler(this.buttonForward_Click);
             // 
-            // molarMassToolStripMenuItem
+            // heunsMethodToolStripMenuItem
             // 
-            this.molarMassToolStripMenuItem.Name = "molarMassToolStripMenuItem";
-            this.molarMassToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.molarMassToolStripMenuItem.Text = "Molar Mass";
-            this.molarMassToolStripMenuItem.Click += new System.EventHandler(this.molarMassToolStripMenuItem_Click);
+            this.heunsMethodToolStripMenuItem.Name = "heunsMethodToolStripMenuItem";
+            this.heunsMethodToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.heunsMethodToolStripMenuItem.Text = "Heun\'s Method";
+            this.heunsMethodToolStripMenuItem.Click += new System.EventHandler(this.heunsMethodToolStripMenuItem_Click);
             // 
             // SK_m_0
             // 
@@ -239,6 +248,7 @@
         private System.Windows.Forms.ToolStripMenuItem eulersMethodToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chemicalBalancerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem molarMassToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem heunsMethodToolStripMenuItem;
     }
 }
 

@@ -11,7 +11,7 @@ namespace Browser
     /// </summary>
     public class Equation
     {
-        public  List<String> elements = new List<string>();
+        public List<String> elements = new List<string>();
         //public  List<String[,]> results = new List<String[,]>();
         //public static String[] left;
         //public static String[] right;
@@ -51,7 +51,7 @@ namespace Browser
         /// </summary>
         /// <returns>Returns a string array containing each of the separate
         /// terms in the left-hand side of the equation.</returns>
-         public String[] GetLeft()
+        public String[] GetLeft()
         {
             string temp;
             temp = eqn.Substring(0, eqn.IndexOf("="));
