@@ -187,7 +187,14 @@ namespace Browser
             ef.ShowDialog();
             ef.Close();
         }
+        private void heunsMethodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EulerForm ef = new EulerForm();
 
+            ef.Text = "Heun's Method";
+            ef.ShowDialog();
+            ef.Close();
+        }
         private void chemicalBalancerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EquationBalanceForm eq = new EquationBalanceForm();

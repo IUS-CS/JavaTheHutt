@@ -29,7 +29,14 @@ namespace Browser
                     double x = Double.Parse(values[0].Trim());
                     double y = Double.Parse(values[1].Trim());
 
-                    ResultBox.Text = func.Euler(FunctionBox.Text, x, y, Double.Parse(EndValueBox.Text)).ToString();
+                    if (this.Text == "Euler's Method")
+                    {
+                        ResultBox.Text = func.Euler(FunctionBox.Text, x, y, Double.Parse(EndValueBox.Text)).ToString();
+                    }
+                    else if (this.Text == "Heun's Method")
+                    {
+                        ResultBox.Text = func.Heun(FunctionBox.Text, x, y, Double.Parse(EndValueBox.Text)).ToString();
+                    }
                 }
                 else
                 {
