@@ -53,6 +53,7 @@
             this.PassphraseBox.PasswordChar = '*';
             this.PassphraseBox.Size = new System.Drawing.Size(124, 20);
             this.PassphraseBox.TabIndex = 1;
+            this.PassphraseBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PassphraseBox_KeyPress);
             // 
             // name_label
             // 
@@ -89,6 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.pass_label);

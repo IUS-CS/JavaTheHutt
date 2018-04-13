@@ -18,8 +18,8 @@ namespace Browser
             this.labelProductName.Text = "SK_m_0";
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.labelCompanyName.Text = "Authors: Paul Kelley, Jonathan Steininger";
+            this.textBoxDescription.Text = "SK_m_0 is an interactive web browser that provides calculating utilities.";
         }
 
         #region Assembly Attribute Accessors
@@ -101,15 +101,5 @@ namespace Browser
             }
         }
         #endregion
-
-        private void labelProductName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void About_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
