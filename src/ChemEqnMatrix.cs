@@ -69,7 +69,7 @@ namespace Browser
             PopulateMatrix(results, left.Length, right.Length, eqn);
             numElems = eqn.elements.Count();
         }
-        
+
         /// <summary>
         /// Finds the index of the occurence of string of interest in a string array.
         /// </summary>
@@ -86,7 +86,7 @@ namespace Browser
                     return i;
                 }
             }
-            
+
             return -1;
         }//array
 
@@ -120,10 +120,10 @@ namespace Browser
         /// chemical equation.</param>
         /// <param name="rSize">The number of terms in the right side of the
         /// chemical equation.</param>
-        /// <param name="eqn">The euation to be balanced.</param>
+        /// <param name="eqn">The equation to be balanced.</param>
         private void PopulateMatrix(List<String[,]> results, int lSize, int rSize, Equation eqn)
         {
-             matrix = new double[eqn.elements.Count + 1, lSize + rSize + 1];
+            matrix = new double[eqn.elements.Count + 1, lSize + rSize + 1];
 
             matrix[eqn.elements.Count, 0] = 1;
             matrix[eqn.elements.Count, lSize + rSize] = 1;
@@ -192,7 +192,7 @@ namespace Browser
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
-         public double GetLCMDiagonal()
+        public double GetLCMDiagonal()
         {
             double lcm = matrix[0, 0];
             //DisplayMatrix(matrix);
@@ -262,9 +262,9 @@ namespace Browser
         {
             StringBuilder final = new StringBuilder();
             int i = 0;
-            for(int k = 0; k < answer.Length; k++)
+            for (int k = 0; k < answer.Length; k++)
             {
-                if(Math.Abs(answer[k]) < 0.001)
+                if (Math.Abs(answer[k]) < 0.001)
                 {
                     return "No solution";
                 }
@@ -324,7 +324,7 @@ namespace Browser
         /// </summary>
         /// <param name="r1">The index of the first row to be swapped.</param>
         /// <param name="r2">The index of the second row to be swapped.</param>
-        public void SwapRows( int r1, int r2)
+        public void SwapRows(int r1, int r2)
         {
             double temp;
             for (int i = 0; i < matrix.GetLength(1); i++)
@@ -340,7 +340,7 @@ namespace Browser
         /// and if so, swapping it with the appropriate row.
         /// </summary>
         /// <param name="currentRow">The index of the row that may be swapped.</param>
-        public void FindAndSwap( int currentRow)
+        public void FindAndSwap(int currentRow)
         {
             double smallest = double.MaxValue;
             int currentRowLeadingCoeffPos = -1;
@@ -379,7 +379,7 @@ namespace Browser
             {
                 if (matrix[i, first] < smallest && Math.Abs(matrix[i, first]) > 0.1)
                 {
-                    
+
                     smallest = matrix[i, first];
                     //Console.WriteLine("SMALLEST " + smallest + " i " + i);
                     rowToSwitch = i;
@@ -388,7 +388,7 @@ namespace Browser
             //if (currentRow != rowToSwitch)
             if (currentRow < rowToSwitch)
             {
-                SwapRows( currentRow, rowToSwitch);
+                SwapRows(currentRow, rowToSwitch);
                 return;
             }
         }
@@ -400,7 +400,7 @@ namespace Browser
         /// <param name="row1">The index of the first row whose scalar is sought.</param>
         /// <param name="row2">The index of the second row whose scalar is sought.</param>
         /// <returns>Returns an array containing the scalars of the two input rows.</returns>
-        public double[] FindScalars( int row1, int row2)
+        public double[] FindScalars(int row1, int row2)
         {
             double[] lcm = new double[2];
             int posLCR1 = 0;
@@ -453,7 +453,7 @@ namespace Browser
         /// leading coefficient of the destRow.</param>
         /// <param name="destRow">The row whose leading coefficient will be eliminated.</param>
         /// <param name="scalar"></param>
-        public void RowAddScalar1( int sourceRow, int destRow, double[] scalar)
+        public void RowAddScalar1(int sourceRow, int destRow, double[] scalar)
         {
             if (Math.Abs(scalar[0]) < .001)
             {
@@ -471,7 +471,7 @@ namespace Browser
         /// </summary>
         /// <param name="pos">The index of the matrix whose gcd is sought.</param>
         /// <returns>Returns the value of the gcd of a row of the matrix.</returns>
-        public double GCDofRow( int pos)
+        public double GCDofRow(int pos)
         {
             double gcd = matrix[pos, 0];
             for (int i = 1; i < matrix.GetLength(1); i++)
@@ -485,9 +485,9 @@ namespace Browser
         /// Reduces a row to the lowest integer terms.
         /// </summary>
         /// <param name="pos">The index of the row to be reduced to lowest terms.</param>
-        public void ToLowestTermsR( int pos)
+        public void ToLowestTermsR(int pos)
         {
-            double gcd = GCDofRow( pos);
+            double gcd = GCDofRow(pos);
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
                 if (Math.Abs(matrix[pos, i]) > .001)
@@ -539,7 +539,7 @@ namespace Browser
                     matrix[i, j] = matrix[i, j] * signs[i];
                 }
             }
-            
+
         }
 
         /// <summary>
@@ -564,7 +564,7 @@ namespace Browser
             double[] scalar1;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                FindAndSwap( i);
+                FindAndSwap(i);
                 for (int j = i + 1; j < matrix.GetLength(0); j++)
                 {
                     ToLowestTermsM();
@@ -572,9 +572,9 @@ namespace Browser
                     //Console.WriteLine("I " + i + " j " + j);
                     //Console.WriteLine("FIRST");
                     //DisplayMatrix();
-                    scalar1 = FindScalars( i, j);
+                    scalar1 = FindScalars(i, j);
                     //Console.WriteLine("Sclar " + scalar);
-                    RowAddScalar1( i, j, scalar1);
+                    RowAddScalar1(i, j, scalar1);
                     //Console.WriteLine("LAST");
                     //DisplayMatrix();
                 }
@@ -613,8 +613,8 @@ namespace Browser
         {
             double[] scalar1;
             //Console.WriteLine("CALLED RED" + numElems);
-            
-            for(int i = 0; i < numElems; i++)
+
+            for (int i = 0; i < numElems; i++)
             {
                 FindAndSwap(i);
                 //Console.WriteLine("FS" + i);
@@ -635,7 +635,7 @@ namespace Browser
                     //DisplayMatrix();
                     scalar1 = FindPositionalScalars(i, j);
                     //Console.WriteLine("Sclar " + scalar1[0] + " " + scalar1[1]);
-                    RowAddScalar1( i, j, scalar1);
+                    RowAddScalar1(i, j, scalar1);
                     //Console.WriteLine("LAST");
                     //DisplayMatrix();
 

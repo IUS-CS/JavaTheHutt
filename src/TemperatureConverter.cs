@@ -17,6 +17,9 @@ namespace Browser
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Computes all temperature values based on the provided temperature value
+        /// </summary>
         private void Temp_Convert_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(FahrenheitBox.Text))

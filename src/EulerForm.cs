@@ -17,6 +17,11 @@ namespace Browser
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Responds to button click by pulling data from text boxes and calling appropriate method
+        /// </summary>
+        /// <param name="sender">The object that send the event argument.</param>
+        /// <param name="e">The event argument.</param>
         private void EulerButton_Click(object sender, EventArgs e)
         {
             FunctionEval func = new FunctionEval();
@@ -29,7 +34,14 @@ namespace Browser
                     double x = Double.Parse(values[0].Trim());
                     double y = Double.Parse(values[1].Trim());
 
-                    ResultBox.Text = func.Euler(FunctionBox.Text, x, y, Double.Parse(EndValueBox.Text)).ToString();
+                    if (this.Text == "Euler's Method")
+                    {
+                        ResultBox.Text = func.Euler(FunctionBox.Text, x, y, Double.Parse(EndValueBox.Text)).ToString();
+                    }
+                    else if (this.Text == "Heun's Method")
+                    {
+                        ResultBox.Text = func.Heun(FunctionBox.Text, x, y, Double.Parse(EndValueBox.Text)).ToString();
+                    }
                 }
                 else
                 {

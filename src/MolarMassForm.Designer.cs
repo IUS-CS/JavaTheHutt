@@ -81,9 +81,9 @@
             this.MassLabel.AutoSize = true;
             this.MassLabel.Location = new System.Drawing.Point(68, 112);
             this.MassLabel.Name = "MassLabel";
-            this.MassLabel.Size = new System.Drawing.Size(32, 13);
+            this.MassLabel.Size = new System.Drawing.Size(47, 13);
             this.MassLabel.TabIndex = 4;
-            this.MassLabel.Text = "Mass";
+            this.MassLabel.Text = "Mass (g)";
             // 
             // ElementLabel
             // 
