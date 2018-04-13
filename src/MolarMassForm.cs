@@ -17,17 +17,25 @@ namespace Browser
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Takes the mass supplied to MassBox and computes the number of moles of that element
+        /// </summary>
+        /// <param name="sender">The sender that sent the event argument</param>
+        /// <param name="e">The event argument</param>
         private void MolarMassButton_Click(object sender, EventArgs e) // TODO
         {
             double data = 1;
 
-            try
+            if (!string.IsNullOrEmpty(MassBox.Text))
             {
-                MolarResultBox.Text = (Double.Parse(MassBox.Text) / data).ToString();
-            }
-            catch
-            {
-                MolarResultBox.Text = "Error";
+                try
+                {
+                    MolarResultBox.Text = (Double.Parse(MassBox.Text) / data).ToString();
+                }
+                catch
+                {
+                    MolarResultBox.Text = "Error";
+                }
             }
         }
     }

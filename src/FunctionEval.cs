@@ -8,7 +8,7 @@ namespace Browser
 {
     class FunctionEval
     {
-        double step = .0001;
+        double step = .0001; //step size for numeric integration
 
         /// <summary>
         /// Formats expression and substitutes value for variable, then computes result

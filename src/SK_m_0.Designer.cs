@@ -39,13 +39,16 @@
             this.TemperatureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.functionEvalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eulersMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chemicalBalancerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.molarMassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eulersMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.heunsMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WebSearch = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonForward = new System.Windows.Forms.Button();
-            this.heunsMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clipboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +71,6 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(681, 307);
             this.webBrowser1.TabIndex = 1;
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // menuStrip1
             // 
@@ -84,9 +86,10 @@
             // FileToolStripMenuItem
             // 
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem,
             this.userInfoToolStripMenuItem,
-            this.historyToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.historyToolStripMenuItem,
+            this.clipboxToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
             this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.FileToolStripMenuItem.Text = "File";
@@ -94,21 +97,21 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // userInfoToolStripMenuItem
             // 
             this.userInfoToolStripMenuItem.Name = "userInfoToolStripMenuItem";
-            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.userInfoToolStripMenuItem.Text = "User Info";
             this.userInfoToolStripMenuItem.Click += new System.EventHandler(this.userInfoToolStripMenuItem_Click);
             // 
             // historyToolStripMenuItem
             // 
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.historyToolStripMenuItem.Text = "History";
             this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
             // 
@@ -147,13 +150,6 @@
             this.functionEvalToolStripMenuItem.Text = "Function Eval";
             this.functionEvalToolStripMenuItem.Click += new System.EventHandler(this.functionEvalToolStripMenuItem_Click);
             // 
-            // eulersMethodToolStripMenuItem
-            // 
-            this.eulersMethodToolStripMenuItem.Name = "eulersMethodToolStripMenuItem";
-            this.eulersMethodToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.eulersMethodToolStripMenuItem.Text = "Euler\'s Method";
-            this.eulersMethodToolStripMenuItem.Click += new System.EventHandler(this.eulersMethodToolStripMenuItem_Click);
-            // 
             // chemicalBalancerToolStripMenuItem
             // 
             this.chemicalBalancerToolStripMenuItem.Name = "chemicalBalancerToolStripMenuItem";
@@ -167,6 +163,20 @@
             this.molarMassToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.molarMassToolStripMenuItem.Text = "Molar Mass";
             this.molarMassToolStripMenuItem.Click += new System.EventHandler(this.molarMassToolStripMenuItem_Click);
+            // 
+            // eulersMethodToolStripMenuItem
+            // 
+            this.eulersMethodToolStripMenuItem.Name = "eulersMethodToolStripMenuItem";
+            this.eulersMethodToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.eulersMethodToolStripMenuItem.Text = "Euler\'s Method";
+            this.eulersMethodToolStripMenuItem.Click += new System.EventHandler(this.eulersMethodToolStripMenuItem_Click);
+            // 
+            // heunsMethodToolStripMenuItem
+            // 
+            this.heunsMethodToolStripMenuItem.Name = "heunsMethodToolStripMenuItem";
+            this.heunsMethodToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.heunsMethodToolStripMenuItem.Text = "Heun\'s Method";
+            this.heunsMethodToolStripMenuItem.Click += new System.EventHandler(this.heunsMethodToolStripMenuItem_Click);
             // 
             // WebSearch
             // 
@@ -199,12 +209,29 @@
             this.buttonForward.UseVisualStyleBackColor = true;
             this.buttonForward.Click += new System.EventHandler(this.buttonForward_Click);
             // 
-            // heunsMethodToolStripMenuItem
+            // clipboxToolStripMenuItem
             // 
-            this.heunsMethodToolStripMenuItem.Name = "heunsMethodToolStripMenuItem";
-            this.heunsMethodToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.heunsMethodToolStripMenuItem.Text = "Heun\'s Method";
-            this.heunsMethodToolStripMenuItem.Click += new System.EventHandler(this.heunsMethodToolStripMenuItem_Click);
+            this.clipboxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enableToolStripMenuItem,
+            this.disableToolStripMenuItem});
+            this.clipboxToolStripMenuItem.Name = "clipboxToolStripMenuItem";
+            this.clipboxToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clipboxToolStripMenuItem.Text = "Clipboard";
+            // 
+            // enableToolStripMenuItem
+            // 
+            this.enableToolStripMenuItem.Name = "enableToolStripMenuItem";
+            this.enableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.enableToolStripMenuItem.Text = "Enable";
+            this.enableToolStripMenuItem.Click += new System.EventHandler(this.enableToolStripMenuItem_Click);
+            // 
+            // disableToolStripMenuItem
+            // 
+            this.disableToolStripMenuItem.Enabled = false;
+            this.disableToolStripMenuItem.Name = "disableToolStripMenuItem";
+            this.disableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.disableToolStripMenuItem.Text = "Disable";
+            this.disableToolStripMenuItem.Click += new System.EventHandler(this.disableToolStripMenuItem_Click);
             // 
             // SK_m_0
             // 
@@ -249,6 +276,9 @@
         private System.Windows.Forms.ToolStripMenuItem chemicalBalancerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem molarMassToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem heunsMethodToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clipboxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem enableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem disableToolStripMenuItem;
     }
 }
 
