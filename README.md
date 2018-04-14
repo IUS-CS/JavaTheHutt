@@ -1,6 +1,6 @@
 # JavaTheHutt
-Website based chemistry analysis
+Windows based "cheater" browser
 
-This project is based in the creation of a web application that can be used to predict products of reactions, as well as calculating equations that are necessary for these reactions.
+This project is intended to build web browser containing various tools to assist in the completion of online homework and quizzes. Some features will include the ability to calculate the molar mass, balance chemical equations, and more.
 
 ### Implementation to later be written as updated.
