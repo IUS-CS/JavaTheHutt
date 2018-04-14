@@ -13,14 +13,22 @@ namespace Browser
 {
 	public partial class MolarMassForm : Form
 	{
+		/// <summary>
+		/// Creates a form with functionality to compute the molar mass.
+		/// </summary>
 		public MolarMassForm()
 		{
 			InitializeComponent();
 		}
 
-		private void MolarMassButton_Click(object sender, EventArgs e) // TODO
+		/// <summary>
+		/// Computes molar mass based on an input element and mass.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void MolarMassButton_Click(object sender, EventArgs e) 
 		{
-			string weight = "";
+			double weight = 1;
 			string element = ElementBox.Text;
 
 			try
@@ -34,9 +42,6 @@ namespace Browser
 				using (var connection = new SqlConnection(cb.ConnectionString))
 				{
 					connection.Open();
-
-					//This is how you query use the relevant static string and function below
-					//You can test the file by only running this command
 					weight = GetWeightFromDB(connection, element);
 				}
 			}
@@ -44,11 +49,10 @@ namespace Browser
 			{
 				Console.WriteLine(f.ToString());
 			}
-			double data = Double.Parse(weight);
 
 			try
 			{
-				MolarResultBox.Text = (Double.Parse(MassBox.Text) / data).ToString();
+				MolarResultBox.Text = (Double.Parse(MassBox.Text) / weight).ToString();
 			}
 			catch
 			{
@@ -56,22 +60,28 @@ namespace Browser
 			}
 		}
 
-
-		static string GetWeightFromDB(SqlConnection connection, string element)
+		/// <summary>
+		/// Performs a SQL query that returns the atomic weight of an element
+		/// from a database based on the input element.
+		/// </summary>
+		/// <param name="connection">The database connection information.</param>
+		/// <param name="element">The symbol for the element of interest.</param>
+		/// <returns>Returns the atomic weight of the element of interest.</returns>
+		static double GetWeightFromDB(SqlConnection connection, string element)
 		{
 			element.Replace("\'", "");
 			element.Replace(";", "");
 			element.Replace("\"", "");
 
 			string tsql = "select atomic_weight from Elements WHERE symbol = \'" + element + "\';";
-			string weight = "";
+			double weight = 1;
 			using (var command = new SqlCommand(tsql, connection))
 			{
 				using (SqlDataReader reader = command.ExecuteReader())
 				{
 					while (reader.Read())
 					{
-						weight = reader.GetString(0);
+						weight = reader.GetDouble(0);
 					}
 				}
 			}
