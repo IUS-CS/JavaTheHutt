@@ -219,6 +219,31 @@ namespace Browser
         }
 
         /// <summary>
+        /// Creates an Infoform to display browsing history for the session
+        /// </summary>
+        /// <param name="sender">The sender object</param>
+        /// <param name="e">The event argument</param>
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InfoForm historyForm = new InfoForm();
+
+            historyForm.Add(history);
+            historyForm.SetName("History");
+            historyForm.ShowDialog();
+            historyForm.Close();
+        }
+
+        /// <summary>
+        /// Clears browsing history
+        /// </summary>
+        /// <param name="sender">The sender object</param>
+        /// <param name="e">The event argument</param>
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            history.Clear();
+        }
+
+        /// <summary>
         /// Creates and displays a numeric integrator based on Euler's method
         /// </summary>
         /// <param name="sender">The sender object</param>
