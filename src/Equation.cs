@@ -12,9 +12,6 @@ namespace Browser
     public class Equation
     {
         public List<String> elements = new List<string>();
-        //public  List<String[,]> results = new List<String[,]>();
-        //public static String[] left;
-        //public static String[] right;
         static string eqn;
 
         /// <summary>
@@ -55,7 +52,7 @@ namespace Browser
         {
             string temp;
             temp = eqn.Substring(0, eqn.IndexOf("="));
-            int numPlus = NumOcc(eqn, "+");
+            int numPlus = NumOcc(temp, "+");
             string[] s = new string[numPlus + 1];
             temp = temp.Trim();
             s = temp.Split('+');
@@ -76,9 +73,10 @@ namespace Browser
         public int NumOcc(string s, string c)
         {
             int count = 0;
+		  char temp = Char.Parse(c);
             for (int i = 0; i < s.Length; i++)
             {
-                if (s.ElementAt(i).Equals(c))
+                if (0 == s.ElementAt(i).CompareTo(temp))
                 {
                     count++;
                 }

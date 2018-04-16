@@ -51,8 +51,18 @@ namespace ChemEqnBalancer.Tests
 			string s = "C C";
 			string c = "C";
 			Equation e = new Equation(s);
-			int expected = 4;
+			int expected = 2;
 			int result = e.NumOcc(s,c);
+			Assert.AreEqual(expected, result);
+		}
+		[TestMethod()]
+		public void NumOccTest1()
+		{
+			string s = "CXC";
+			string c = "C";
+			Equation e = new Equation(s);
+			int expected = 2;
+			int result = e.NumOcc(s, c);
 			Assert.AreEqual(expected, result);
 		}
 
@@ -68,6 +78,38 @@ namespace ChemEqnBalancer.Tests
 				for (int j = 0; j < expected.GetLength(1); j++)
 				{
 					Assert.AreEqual(expected[i,j], result[i,j]);
+				}
+			}
+		}
+
+		[TestMethod()]
+		public void ParseTest1()
+		{
+			string s = "CO2 + H2O = C6H12O6 + O2";
+			Equation e = new Equation(s);
+			string[,] expected = { { "C", "H", "O" }, { "6", "12", "6" } };
+			string[,] result = e.Parse("C6H12O6");
+			for (int i = 0; i < expected.GetLength(0); i++)
+			{
+				for (int j = 0; j < expected.GetLength(1); j++)
+				{
+					Assert.AreEqual(expected[i, j], result[i, j]);
+				}
+			}
+		}
+
+		[TestMethod()]
+		public void ParseTest2()
+		{
+			string s = "CO2 + H2O = C6H12O6 + O2";
+			Equation e = new Equation(s);
+			string[,] expected = { { "O" }, { "2" } };
+			string[,] result = e.Parse("O2");
+			for (int i = 0; i < expected.GetLength(0); i++)
+			{
+				for (int j = 0; j < expected.GetLength(1); j++)
+				{
+					Assert.AreEqual(expected[i, j], result[i, j]);
 				}
 			}
 		}
