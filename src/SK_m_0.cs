@@ -234,13 +234,15 @@ namespace Browser
         }
 
         /// <summary>
-        /// Clears browsing history
+        /// Clears browsing history and resets stacks
         /// </summary>
         /// <param name="sender">The sender object</param>
         /// <param name="e">The event argument</param>
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             history.Clear();
+            ForwardStack.Clear();
+            BackStack.Clear();
         }
 
         /// <summary>
