@@ -28,7 +28,7 @@ namespace ChemEqnBalancer.Tests
 		}
 
 		[TestMethod()]
-		public void indexOfTest()//array
+		public void indexOfTesta()//array
 		{
 			String s = "CO2 + H2O = C6H12O6 + O2";
 			ChemEqnMatrix cm = new ChemEqnMatrix(s);
@@ -39,7 +39,7 @@ namespace ChemEqnBalancer.Tests
 			Assert.AreEqual(expected, result);
 		}
 
-		public void indexOfTesta()//array
+		public void indexOfTesta1()//array
 		{
 			String s = "CO2 + H2O = C6H12O6 + O2";
 			ChemEqnMatrix cm = new ChemEqnMatrix(s);
@@ -51,7 +51,7 @@ namespace ChemEqnBalancer.Tests
 		}
 
 		[TestMethod()]
-		public void indexOfTest1()//matrix
+		public void indexOfTestm()//matrix
 		{
 			String s = "CO2 + H2O = C6H12O6 + O2";
 			ChemEqnMatrix cm = new ChemEqnMatrix(s);
@@ -63,7 +63,7 @@ namespace ChemEqnBalancer.Tests
 		}
 
 		[TestMethod()]
-		public void indexOfTest1a()//matrix
+		public void indexOfTestm1()//matrix
 		{
 			String s = "CO2 + H2O = C6H12O6 + O2";
 			ChemEqnMatrix cm = new ChemEqnMatrix(s);
@@ -78,16 +78,26 @@ namespace ChemEqnBalancer.Tests
 		public void GetAdjunctColTest()
 		{
 			String s = "CO2 + H2O = C6H12O6 + O2";
-			double[,] m = { { 1, 7, 9 }, { 0, 5, 8 } };
 			ChemEqnMatrix cm = new ChemEqnMatrix(s);
-			double[] expected = {0, 0,0,1};
+			double[] expected = {0, 0, 0, 1};
 			double[] result = cm.GetAdjunctCol();
-			//Assert.AreEqual(expected[0], result[0]);
-			//Assert.AreEqual(expected[1], result[1]);
-			//Assert.AreEqual(expected[2], result[2]);
-			//Assert.AreEqual(expected[3], result[3]);
 			
 			for(int i = 0; i < result.Length; i++)
+			{
+				Assert.AreEqual(expected[i], result[i]);
+			}
+		}
+
+		[TestMethod()]
+		public void GetAdjunctColTest1()
+		{
+			String s = "CO2 + H2O = C6H12O6 + O2";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s);
+			cm.Balance();
+			double[] expected = { 1, 1, 1, 1 };
+			double[] result = cm.GetAdjunctCol();
+
+			for (int i = 0; i < result.Length; i++)
 			{
 				Assert.AreEqual(expected[i], result[i]);
 			}
@@ -107,12 +117,37 @@ namespace ChemEqnBalancer.Tests
 		}
 
 		[TestMethod()]
+		public void GetDiagonalTest1()
+		{
+			String s = "CO2 + H2O = C6H12O6 + O2";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s);
+			cm.Balance();
+			double[] expected = { 1, 1, 6, 1 };
+			double[] result = cm.GetDiagonal();
+			for (int i = 0; i < result.Length; i++)
+			{
+				Assert.AreEqual(expected[i], result[i]);
+			}
+		}
+
+		[TestMethod()]
 		public void GetLCMDiagonalTest()
 		{
 			String s = "CO2 + H2O = C6H12O6 + O2";
 			ChemEqnMatrix cm = new ChemEqnMatrix(s);
 			cm.Balance();
 			double expected = 6;
+			double result = cm.GetLCMDiagonal();
+			Assert.AreEqual(expected, result);
+		}
+
+		[TestMethod()]
+		public void GetLCMDiagonalTest1()
+		{
+			String s = "CHCl3 + O2 = CO2 + H2O + Cl2";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s);
+			cm.Balance();
+			double expected = 4;
 			double result = cm.GetLCMDiagonal();
 			Assert.AreEqual(expected, result);
 		}
@@ -131,7 +166,35 @@ namespace ChemEqnBalancer.Tests
 			}
 		}
 
-		
+		[TestMethod()]
+		public void DetermineCoefficientsTest1()
+		{
+			String s = "CHCl3 + O2 = CO2 + H2O + Cl2";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s);
+			cm.Balance();
+			int[] expected = { 4, 5, 4, 2, 6 };
+			int[] result = cm.DetermineCoefficients();
+			for (int i = 0; i < result.Length; i++)
+			{
+				Assert.AreEqual(expected[i], result[i]);
+			}
+		}
+
+		[TestMethod()]
+		public void DetermineCoefficientsTest2()
+		{
+			String s = "C6HOF2Ne = C3HOFNe + C";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s);
+			cm.Balance();
+			int[] expected = { 1, 1, 0 };
+			int[] result = cm.DetermineCoefficients();
+			for (int i = 0; i < result.Length; i++)
+			{
+				Assert.AreEqual(expected[i], result[i]);
+			}
+		}
+
+
 
 		[TestMethod()]
 		public void InsertCoeffTest()
@@ -147,10 +210,93 @@ namespace ChemEqnBalancer.Tests
 		}
 
 		[TestMethod()]
+		public void InsertCoeffTest1()
+		{
+			String s = "C6HOF2Ne = C3HOFNe + C";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s);
+			int[] setup = { 1, 1, 0 };
+			string expected = "No solution";
+			string result = cm.InsertCoeff(setup);
+
+			Assert.AreEqual(expected, result);
+
+		}
+
+		[TestMethod()]
 		public void BalanceTest()
 		{
 			String s1 = "CO2 + H2O = C6H12O6 + O2";
 			String expected = "6CO2 + 6H2O = C6H12O6 + 6O2";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s1);
+			string result = cm.Balance();
+			Assert.AreEqual(expected, result);
+		}
+
+		[TestMethod()]
+		public void BalanceTest1()
+		{
+			String s1 = "CO2 + H2O2 = C6H12O6 + O2";
+			String expected = "6CO2 + 6H2O2 = C6H12O6 + 9O2";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s1);
+			string result = cm.Balance();
+			Assert.AreEqual(expected, result);
+		}
+
+		[TestMethod()]
+		public void BalanceTest2()
+		{
+			String s1 = "C6H12O6 + O2 = CO2 + H2O";
+			String expected = "C6H12O6 + 6O2 = 6CO2 + 6H2O";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s1);
+			string result = cm.Balance();
+			Assert.AreEqual(expected, result);
+		}
+
+		[TestMethod()]
+		public void BalanceTest3()
+		{
+			String s1 = "H2O6 = O2 + H2";
+			String expected = "H2O6 = 3O2 + H2";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s1);
+			string result = cm.Balance();
+			Assert.AreEqual(expected, result);
+		}
+
+		[TestMethod()]
+		public void BalanceTest4()
+		{
+			String s1 = "CHOFNe = CHOFNe";
+			String expected = "CHOFNe = CHOFNe";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s1);
+			string result = cm.Balance();
+			Assert.AreEqual(expected, result);
+		}
+
+		[TestMethod()]
+		public void BalanceTest5()
+		{
+			String s1 = "C6HOF2Ne = C3HOFNe + C";
+			String expected = "No solution";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s1);
+			string result = cm.Balance();
+			Assert.AreEqual(expected, result);
+		}
+
+		[TestMethod()]
+		public void BalanceTest6()
+		{
+			String s1 = "CHCl3 + O2 = CO2 + H2O + Cl2";
+			String expected = "4CHCl3 + 5O2 = 4CO2 + 2H2O + 6Cl2";
+			ChemEqnMatrix cm = new ChemEqnMatrix(s1);
+			string result = cm.Balance();
+			Assert.AreEqual(expected, result);
+		}
+
+		[TestMethod()]
+		public void BalanceTest7()
+		{
+			String s1 = "CuN2O6 + NO + H2O = Cu + HNO3";
+			String expected = "3CuN2O6 + 2NO + 4H2O = 3Cu + 8HNO3";
 			ChemEqnMatrix cm = new ChemEqnMatrix(s1);
 			string result = cm.Balance();
 			Assert.AreEqual(expected, result);
@@ -180,6 +326,40 @@ namespace ChemEqnBalancer.Tests
 		{
 			//matrix property needs to be set to public for this
 			double[,] m = { { 0, 5, 8 }, { 6, 4, 3 }, { 1, 7, 9 } };
+			ChemEqnMatrix cm = new ChemEqnMatrix(m);
+			double[,] expected = { { 1, 7, 9 }, { 6, 4, 3 }, { 0, 5, 8 } };
+			cm.FindAndSwap(0);
+			for (int i = 0; i < m.GetLength(0); i++)
+			{
+				for (int j = 0; j < m.GetLength(1); j++)
+				{
+					Assert.AreEqual(expected[i, j], cm.matrix[i, j]);
+				}
+			}
+		}
+
+		[TestMethod()]
+		public void FindAndSwapTest1()
+		{
+			//matrix property needs to be set to public for this
+			double[,] m = { { 6, 4, 3 }, { 0, 5, 8 }, { 1, 7, 9 } };
+			ChemEqnMatrix cm = new ChemEqnMatrix(m);
+			double[,] expected = { { 1, 7, 9 }, { 0, 5, 8 }, { 6, 4, 3 } };
+			cm.FindAndSwap(0);
+			for (int i = 0; i < m.GetLength(0); i++)
+			{
+				for (int j = 0; j < m.GetLength(1); j++)
+				{
+					Assert.AreEqual(expected[i, j], cm.matrix[i, j]);
+				}
+			}
+		}
+
+		[TestMethod()]
+		public void FindAndSwapTest2()
+		{
+			//matrix property needs to be set to public for this
+			double[,] m = { { 6, 4, 3 }, { 1, 7, 9 }, { 0, 5, 8 } };
 			ChemEqnMatrix cm = new ChemEqnMatrix(m);
 			double[,] expected = { { 1, 7, 9 }, { 6, 4, 3 }, { 0, 5, 8 } };
 			cm.FindAndSwap(0);
@@ -274,7 +454,6 @@ namespace ChemEqnBalancer.Tests
 		[TestMethod()]
 		public void ToLowestTermsMTest()
 		{
-			//fix
 			double[,] m = { { 1, 5, 8 }, { 6, 12, 3 }, { 12, 14, 8 } };
 			ChemEqnMatrix cm = new ChemEqnMatrix(m);
 			double[,] expected = { { 1, 5, 8 }, { 2, 4, 1 }, { 6, 7, 4 } };

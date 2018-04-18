@@ -50,10 +50,8 @@ namespace Browser
         public ChemEqnMatrix(String s)
         {
             Equation eqn = new Equation(s);
-            //numElems = eqn.elements.Count();
             left = eqn.GetLeft();
             right = eqn.GetRight();
-
             List<String[,]> results = new List<String[,]>();
 
             for (int k = 0; k < left.Length; k++)
@@ -106,6 +104,7 @@ namespace Browser
                     return i;
                 }
             }
+
             return -1;
         }//matrix
 
@@ -127,9 +126,11 @@ namespace Browser
 
             matrix[eqn.elements.Count, 0] = 1;
             matrix[eqn.elements.Count, lSize + rSize] = 1;
+
             for (int i = 0; i < eqn.elements.Count; i++)
             {
                 int j = 0;
+
                 for (; j < lSize; j++)
                 {
                     if (indexOf(results[j], eqn.elements[i]) > -1)
@@ -137,6 +138,7 @@ namespace Browser
                         matrix[i, j] = double.Parse(results[j][1, indexOf(results[j], eqn.elements[i])]);
                     }
                 }
+
                 for (; j < lSize + rSize; j++)
                 {
                     if (indexOf(results[j], eqn.elements[i]) > -1)
@@ -145,9 +147,6 @@ namespace Browser
                     }
                 }
             }
-            //Console.WriteLine("//////////////////////");
-            //DisplayMatrix();
-            //Console.WriteLine("//////////////////////");
         }
 
         /// <summary>
@@ -159,12 +158,13 @@ namespace Browser
         /// column of a matrix.</returns>
         public double[] GetAdjunctCol()
         {
-            //double[] adjCol = new double[matrix.GetLength(0)];
             double[] adjCol = new double[left.Length + right.Length];
+
             for (int i = 0; i < adjCol.Length; i++)
             {
                 adjCol[i] = matrix[i, matrix.GetLength(1) - 1];
             }
+
             return adjCol;
         }
 
@@ -177,12 +177,13 @@ namespace Browser
         /// diagonal of a matrix.</returns>
         public double[] GetDiagonal()
         {
-            //double[] diagonal = new double[matrix.GetLength(0)];
             double[] diagonal = new double[left.Length + right.Length];
+
             for (int i = 0; i < diagonal.Length; i++)
             {
                 diagonal[i] = matrix[i, i];
             }
+
             return diagonal;
         }
 
@@ -190,19 +191,18 @@ namespace Browser
         /// Determines the least common multiple of the values
         /// in the main diagonal of a matrix
         /// </summary>
-        /// <param name="matrix"></param>
-        /// <returns></returns>
+        /// <returns>Returns the least common multiple of the main diagonal as a double.</returns>
         public double GetLCMDiagonal()
         {
             double lcm = matrix[0, 0];
-            //DisplayMatrix(matrix);
             double temp;
-            //for (int i = 0; i < matrix.GetLength(0); i++)
+
             for (int i = 0; i < left.Length + right.Length; i++)
             {
                 temp = matrix[i, i];
                 lcm = LCM(lcm, temp);
             }
+
             return lcm;
         }
 
@@ -231,9 +231,9 @@ namespace Browser
 
             for (int i = 0; i < solution.Length; i++)
             {
-                //Console.WriteLine(solution[i]);
                 solutionI[i] = (int)(solution[i]);
             }
+
             return solutionI;
         }
 
@@ -248,6 +248,7 @@ namespace Browser
             double lcm = 0;
             lcm = a * b;
             double gcd = GCD(a, b);
+
             return lcm / gcd;
         }
 
@@ -255,13 +256,12 @@ namespace Browser
         /// Inserts the coefficients into the chemical equation and thereby balancing it.
         /// </summary>
         /// <param name="answer">An array containing the coefficients of the terms.</param>
-        /// <param name="left">The left side of the chemical equation.</param>
-        /// <param name="right">The right side of the chemical equation.</param>
         /// <returns>Returns the balanced chemical equation as a string.</returns>
-        string InsertCoeff(int[] answer, String[] left, String[] right)
+        string InsertCoeff(int[] answer)
         {
             StringBuilder final = new StringBuilder();
             int i = 0;
+
             for (int k = 0; k < answer.Length; k++)
             {
                 if (Math.Abs(answer[k]) < 0.001)
@@ -269,6 +269,7 @@ namespace Browser
                     return "No solution";
                 }
             }
+
             for (; i < left.Length; i++)
             {
                 if (answer[i] > 1)
@@ -276,6 +277,7 @@ namespace Browser
                     left[i] = answer[i].ToString() + left[i];
                 }
             }
+
             for (int j = 0; j < right.Length; j++)
             {
                 if (answer[i] > 1)
@@ -303,6 +305,7 @@ namespace Browser
                 }
                 final.Append(right[i]);
             }
+
             return final.ToString();
         }
 
@@ -312,11 +315,8 @@ namespace Browser
         /// <returns>Returns the balanced chemical equation as a string.</returns>
         public string Balance()
         {
-            //Console.WriteLine("???????????????????????");
-            //DisplayMatrix();
-            //Console.WriteLine("???????????????????????");
             SolveMatrix();
-            return InsertCoeff(DetermineCoefficients(), left, right);
+            return InsertCoeff(DetermineCoefficients());
         }
 
         /// <summary>
@@ -327,6 +327,7 @@ namespace Browser
         public void SwapRows(int r1, int r2)
         {
             double temp;
+
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
                 temp = matrix[r1, i];
@@ -356,6 +357,7 @@ namespace Browser
                     break;
                 }
             }
+
             if (currentRowLeadingCoeffPos > currentRow)
             {
                 for (int i = currentRow; i < matrix.GetLength(0); i++)
@@ -368,6 +370,7 @@ namespace Browser
                             break;
                         }
                     }
+
                     if (currentRowLeadingCoeffPos < first)
                     {
                         first = currentRowLeadingCoeffPos;
@@ -375,17 +378,16 @@ namespace Browser
                     }
                 }
             }
+
             for (int i = first; i < matrix.GetLength(0); i++)
             {
                 if (matrix[i, first] < smallest && Math.Abs(matrix[i, first]) > 0.1)
                 {
-
                     smallest = matrix[i, first];
-                    //Console.WriteLine("SMALLEST " + smallest + " i " + i);
                     rowToSwitch = i;
                 }
             }
-            //if (currentRow != rowToSwitch)
+
             if (currentRow < rowToSwitch)
             {
                 SwapRows(currentRow, rowToSwitch);
@@ -442,6 +444,7 @@ namespace Browser
                 a = b;
                 b = c;
             }
+
             return a;
         }
 
@@ -459,10 +462,12 @@ namespace Browser
             {
                 return;
             }
+
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
                 matrix[destRow, i] = matrix[sourceRow, i] * scalar[1] - matrix[destRow, i] * scalar[0];
             }
+
             return;
         }
 
@@ -474,10 +479,12 @@ namespace Browser
         public double GCDofRow(int pos)
         {
             double gcd = matrix[pos, 0];
+
             for (int i = 1; i < matrix.GetLength(1); i++)
             {
                 gcd = GCD(matrix[pos, i], gcd);
             }
+
             return gcd;
         }
 
@@ -488,6 +495,7 @@ namespace Browser
         public void ToLowestTermsR(int pos)
         {
             double gcd = GCDofRow(pos);
+
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
                 if (Math.Abs(matrix[pos, i]) > .001)
@@ -504,6 +512,7 @@ namespace Browser
         public int[] GetSigns()
         {
             int[] signs = new int[matrix.GetLength(0)];
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -539,7 +548,6 @@ namespace Browser
                     matrix[i, j] = matrix[i, j] * signs[i];
                 }
             }
-
         }
 
         /// <summary>
@@ -558,10 +566,10 @@ namespace Browser
         /// a separate function that performs Gauss-Jordan Elimination.
         /// </summary>
         /// <returns>Returns the matrix solved through Gauss-Jordan Elimination.</returns>
-        //static double[,] ToRowEchelonForm(double[,] matrix)
         public double[,] SolveMatrix()
         {
             double[] scalar1;
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 FindAndSwap(i);
@@ -569,24 +577,16 @@ namespace Browser
                 {
                     ToLowestTermsM();
                     ToPositive();
-                    //Console.WriteLine("I " + i + " j " + j);
-                    //Console.WriteLine("FIRST");
-                    //DisplayMatrix();
                     scalar1 = FindScalars(i, j);
-                    //Console.WriteLine("Sclar " + scalar);
                     RowAddScalar1(i, j, scalar1);
-                    //Console.WriteLine("LAST");
-                    //DisplayMatrix();
                 }
             }
             ToLowestTermsM();
             ToPositive();
-            //Console.WriteLine("\n//////////////////////////////////////////////////////////\n");
-            //DisplayMatrix();
-            //Console.WriteLine("\n//////////////////////////////////////////////////////////\n");
             ToRedRowEchelon();
             ToLowestTermsM();
             ToPositive();
+
             return matrix;
         }
 
@@ -601,8 +601,10 @@ namespace Browser
         public double[] FindPositionalScalars(int bottomRow, int topRow)
         {
             double[] scalars = new double[2];
+
             scalars[0] = matrix[bottomRow, bottomRow];
             scalars[1] = matrix[topRow, bottomRow];
+
             return scalars;
         }
 
@@ -612,33 +614,21 @@ namespace Browser
         private void ToRedRowEchelon()
         {
             double[] scalar1;
-            //Console.WriteLine("CALLED RED" + numElems);
 
             for (int i = 0; i < numElems; i++)
             {
                 FindAndSwap(i);
-                //Console.WriteLine("FS" + i);
-                //DisplayMatrix();
             }
 
             for (int i = left.Length + right.Length - 1; i >= 0; i--)
-            //for (int i = matrix.GetLength(0) - 1; i >= 0; i--)
             {
                 FindAndSwap(i);
                 for (int j = i - 1; j >= 0; j--)
                 {
                     ToLowestTermsM();
                     ToPositive();
-                    //Console.WriteLine("\nI " + i + " j " + j);
-                    //Console.WriteLine("RED");
-                    //Console.WriteLine("I "+ i + " j " + j);
-                    //DisplayMatrix();
                     scalar1 = FindPositionalScalars(i, j);
-                    //Console.WriteLine("Sclar " + scalar1[0] + " " + scalar1[1]);
                     RowAddScalar1(i, j, scalar1);
-                    //Console.WriteLine("LAST");
-                    //DisplayMatrix();
-
                 }
             }
         }
@@ -665,6 +655,7 @@ namespace Browser
         public string ToStringArranged()
         {
             StringBuilder s = new StringBuilder();
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -674,16 +665,19 @@ namespace Browser
                 }
                 s.Append("\n");
             }
+
             return s.ToString();
         }
 
-        /// <summary>
-        /// Returns a string representation of the matrix in a single line fashion.
-        /// </summary>
-        /// <returns>Returns a string representation of the matrix in a single line fashion.</returns>
-        public string ToString()
+		/// <summary>
+		/// Returns a string representation of the matrix in a single line fashion.
+		/// </summary>
+		/// <returns>Returns a string representation of the matrix in a single line fashion.</returns>
+		override
+		public string ToString()
         {
             StringBuilder s = new StringBuilder();
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -691,8 +685,8 @@ namespace Browser
                     s.Append(matrix[i, j]);
                     s.Append(" ");
                 }
-                //s.Append("\n");
             }
+
             return s.ToString();
         }
     }
