@@ -1,0 +1,897 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Browser</name>
+    </assembly>
+    <members>
+        <member name="F:Browser.About.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Browser.About.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Browser.About.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Browser.Calculator.buttonZero_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "0" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "1" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "2" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.button3_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "3" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.button4_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "4" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.button5_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "5" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.button6_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "6" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.button7_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "7" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.button8_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "8" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.button9_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "9" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonPlus_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "+" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonMinus_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "-" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonMult_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "*" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonDiv_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "/" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonPow_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "^" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonDecimal_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "." to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonOpenParen_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "(" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonCloseParen_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a ")" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.eButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "e" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonPI_Click(System.Object,System.EventArgs)">
+            <summary>
+            Appends a "𝜋" to the end of the math string held in the variable "result" and puts "result" in text box
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonBack_Click(System.Object,System.EventArgs)">
+            <summary>
+            Removes the last character from the math string in "result"
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonClear_Click(System.Object,System.EventArgs)">
+            <summary>
+            Clears the contents of the math string in "result"
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.buttonEquals_Click(System.Object,System.EventArgs)">
+            <summary>
+            Performs a function evaluation on the math string that has been built prior to this method call
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.Calculator.resultBox_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Performs a function evaluation on the math string that has been built prior to this method call
+            </summary>
+            <param name="sender">The sender that sent the event argument</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="F:Browser.Calculator.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Browser.Calculator.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Browser.Calculator.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Browser.ChemEqnMatrix">
+            <summary>
+            A class providing some methods for manipulating matrices.
+            Constructing an object and providing a double[,] as the 
+            argument allows use of the function SolveMatrix() which
+            returns a double[,] in a modified reduced row echelon form.
+            The leading coefficient is not necessarily one; however, 
+            it and the adjunct vector could be divided by the leading
+            coefficient and then it would be in rref.
+            Constructing this object with a string that consists of a 
+            valid chemical equation of the form CO2 + H2O = C6H12O6 + O2
+            allows use of the function Balance() which returns a
+            string with the equation properly balanced in lowest terms.
+            </summary>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.#ctor(System.Double[0:,0:])">
+            <summary>
+            Constructing an object and providing a double[,] as the 
+            argument allows use of the function SolveMatrix() which
+            returns a double[,] in a modified reduced row echelon form.
+            The leading coefficient is not necessarily one; however, 
+            it and the adjunct vector could be divided by the leading
+            coefficient and then it would be in rref. 
+            </summary>
+            <param name="matrix">A 2-D array that you want in rref.</param>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.#ctor(System.String)">
+            <summary>
+            Constructing this object with a string that consists of a 
+            valid chemical equation of the form CO2 + H2O = C6H12O6 + O2
+            allows use of the function Balance() which returns a
+            string with the equation properly balanced in lowest terms. 
+            </summary>
+            <param name="s">A chemical equation that you want balanced.</param>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.indexOf(System.String[],System.String)">
+            <summary>
+            Finds the index of the occurence of string of interest in a string array.
+            </summary>
+            <param name="s1">The string array that may contain s2.</param>
+            <param name="s2">The string whose index you wish to find.</param>
+            <returns>Returns the index of the occurence of string of interest in a 
+            string array and -1 if not found.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.indexOf(System.String[0:,0:],System.String)">
+            <summary>
+            Finds the index of the occurence of string of interest in a 2-D string array.
+            </summary>
+            <param name="s1">The 2-D string array that may contain s2.</param>
+            <param name="s2">The string whose index you wish to find.</param>
+            <returns>Returns the index of the occurence of string of interest in a 2-D 
+            string array. Returns -1 if not found.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.PopulateMatrix(System.Collections.Generic.List{System.String[0:,0:]},System.Int32,System.Int32,Browser.Equation)">
+            <summary>
+            Fills a matrix with the values gleaned from parsing the chemical
+            equation.
+            </summary>
+            <param name="results">A matrix containing the elements used in a 
+            a term in the top row and the number of times each element is used
+            in the bottom row.</param>
+            <param name="lSize">The number of terms in the left side of the
+            chemical equation.</param>
+            <param name="rSize">The number of terms in the right side of the
+            chemical equation.</param>
+            <param name="eqn">The equation to be balanced.</param>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.GetAdjunctCol">
+            <summary>
+            Gets the values in the far right side of the 2-D array.
+            These are then used to compute the solution of the matrix
+            -- the coefficients of the terms in the equation
+            </summary>
+            <returns>Returns an array of the values in the far right 
+            column of a matrix.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.GetDiagonal">
+            <summary>
+            Gets the values in the main of the 2-D array.
+            These are then used to compute the solution of the matrix
+            -- the coefficients of the terms in the equation
+            </summary>
+            <returns>Returns an array of the values in the main 
+            diagonal of a matrix.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.GetLCMDiagonal">
+            <summary>
+            Determines the least common multiple of the values
+            in the main diagonal of a matrix
+            </summary>
+            <returns>Returns the least common multiple of the main diagonal as a double.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.DetermineCoefficients">
+            <summary>
+            Finds the coefficients to the terms from the chemical equation.
+            </summary>
+            <returns>Returns an array containg the values of the coefficients of 
+            the terms in the chemical equation.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.LCM(System.Double,System.Double)">
+            <summary>
+            Determines the least common multiple of a pair of input numbers.
+            </summary>
+            <param name="a">One of a pair of values whose least common multiple is sought.</param>
+            <param name="b">One of a pair of values whose least common multiple is sought.</param>
+            <returns>Returns the value, as a double, of the least common multiple of the input numbers.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.InsertCoeff(System.Int32[])">
+            <summary>
+            Inserts the coefficients into the chemical equation and thereby balancing it.
+            </summary>
+            <param name="answer">An array containing the coefficients of the terms.</param>
+            <returns>Returns the balanced chemical equation as a string.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.Balance">
+            <summary>
+            Balances the chemical equation.
+            </summary>
+            <returns>Returns the balanced chemical equation as a string.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.SwapRows(System.Int32,System.Int32)">
+            <summary>
+            Swaps two rows in the matrix based on the input values.
+            </summary>
+            <param name="r1">The index of the first row to be swapped.</param>
+            <param name="r2">The index of the second row to be swapped.</param>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.FindAndSwap(System.Int32)">
+            <summary>
+            Organizes the matrix by determining if the current row is out of place, 
+            and if so, swapping it with the appropriate row.
+            </summary>
+            <param name="currentRow">The index of the row that may be swapped.</param>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.FindScalars(System.Int32,System.Int32)">
+            <summary>
+            Finds the appropriate scalars from the two input rows for 
+            proper row reduction.
+            </summary>
+            <param name="row1">The index of the first row whose scalar is sought.</param>
+            <param name="row2">The index of the second row whose scalar is sought.</param>
+            <returns>Returns an array containing the scalars of the two input rows.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.GCD(System.Double,System.Double)">
+            <summary>
+            Determines the greatest common denominator of a pair of input values.
+            </summary>
+            <param name="x">The first of a pair of values whose gcd is sought.</param>
+            <param name="y">The second of a pair of values whose gcd is sought.</param>
+            <returns>Returns the greatest common denominator of a pair of input values.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.RowAddScalar1(System.Int32,System.Int32,System.Double[])">
+            <summary>
+            Adds two rows of the matrix, after multiplying each by the appropriate 
+            scalar, so that the leading coefficient of one of the rows will be eliminated.
+            </summary>
+            <param name="sourceRow">The row who will be used to eliminated the 
+            leading coefficient of the destRow.</param>
+            <param name="destRow">The row whose leading coefficient will be eliminated.</param>
+            <param name="scalar"></param>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.GCDofRow(System.Int32)">
+            <summary>
+            Determines the greatest common denominator of an entire row of the matrix.
+            </summary>
+            <param name="pos">The index of the matrix whose gcd is sought.</param>
+            <returns>Returns the value of the gcd of a row of the matrix.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.ToLowestTermsR(System.Int32)">
+            <summary>
+            Reduces a row to the lowest integer terms.
+            </summary>
+            <param name="pos">The index of the row to be reduced to lowest terms.</param>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.GetSigns">
+            <summary>
+            Determines the signs of the leading coefficients of each row in the matrix.
+            </summary>
+            <returns>Returs an array indicating the signs of the rows in the array.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.ToPositive">
+            <summary>
+            Ensures that the leading coefficients of each row are positve and that
+            the remaining values in the row are properly adjusted as well.
+            </summary>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.ToLowestTermsM">
+            <summary>
+            Reduces the entire matrix to the lowest integer terms.
+            </summary>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.SolveMatrix">
+            <summary>
+            Solves a matrix by performing Gaussian Elimination and then calling
+            a separate function that performs Gauss-Jordan Elimination.
+            </summary>
+            <returns>Returns the matrix solved through Gauss-Jordan Elimination.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.FindPositionalScalars(System.Int32,System.Int32)">
+            <summary>
+            Determines the scalars of particular positions in the matrix for use in 
+            reducing the matrix in Gauss-Jordan Elimination.
+            </summary>
+            <param name="bottomRow">The index of the bottom row whose scalar is sought.</param>
+            <param name="topRow">The index of the top row whose scalar is sought.</param>
+            <returns>Returns an array containg the scalars of particular positions in the 
+            matrix for use in reducing the matrix in Gauss-Jordan Elimination</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.ToRedRowEchelon">
+            <summary>
+            Performs Gauss-Jordan Elmination on the matrix.
+            </summary>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.DisplayMatrix">
+            <summary>
+            Displays the values in the matrix.
+            </summary>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.ToStringArranged">
+            <summary>
+            Returns a string representation of the matrix arranged in a 2-D array fashion.
+            </summary>
+            <returns>Returns a string representation of the matrix arranged in a 2-D array fashion.</returns>
+        </member>
+        <member name="M:Browser.ChemEqnMatrix.ToString">
+            <summary>
+            Returns a string representation of the matrix in a single line fashion.
+            </summary>
+            <returns>Returns a string representation of the matrix in a single line fashion.</returns>
+        </member>
+        <member name="T:Browser.Equation">
+            <summary>
+            A class largely used for parsing out the terms of an unbalanced chemical equation.
+            </summary>
+        </member>
+        <member name="M:Browser.Equation.#ctor(System.String)">
+            <summary>
+            Constructs an equation object based on the input string.
+            </summary>
+            <param name="s">A string representing a valid, unbalanced chemical equation.</param>
+        </member>
+        <member name="M:Browser.Equation.GetRight">
+            <summary>
+            Determines the right side of an equation.
+            </summary>
+            <returns>Returns a string array containing each of the separate
+            terms in the right-hand side of the equation.</returns>
+        </member>
+        <member name="M:Browser.Equation.GetLeft">
+            <summary>
+            Determines the left side of an equation.
+            </summary>
+            <returns>Returns a string array containing each of the separate
+            terms in the left-hand side of the equation.</returns>
+        </member>
+        <member name="M:Browser.Equation.NumOcc(System.String,System.String)">
+            <summary>
+            Determines the number of times that a particualar sequence of characters 
+            appears in a larger string.
+            </summary>
+            <param name="s">The string which may contain other particular substrings.</param>
+            <param name="c">The substring of interest.</param>
+            <returns>Returns the number of times that a substring appears in a larger string.</returns>
+        </member>
+        <member name="M:Browser.Equation.Parse(System.String)">
+            <summary>
+            Parses an input string to determine what elements are in it and the number of times
+            that element appears in it.
+            </summary>
+            <param name="eqn">The string containing the elements to be parsed.</param>
+            <returns>Returns a row array containing the elements on the top row
+            and the number of times each element appears on the bottom row, directly
+            beneath its respective element.</returns>
+        </member>
+        <member name="M:Browser.Equation.indexOf(System.String[],System.String)">
+            <summary>
+            Finds the index of the occurence of string of interest in a string array.
+            </summary>
+            <param name="s1">The string array that may contain s2.</param>
+            <param name="s2">The string whose index you wish to find.</param>
+            <returns>Returns the index of the occurence of string of interest in a 
+            string array and -1 if not found.</returns>
+        </member>
+        <member name="M:Browser.Equation.indexOf(System.String[0:,0:],System.String)">
+            <summary>
+            Finds the index of the occurence of string of interest in a 2-D string array.
+            </summary>
+            <param name="s1">The 2-D string array that may contain s2.</param>
+            <param name="s2">The string whose index you wish to find.</param>
+            <returns>Returns the index of the occurence of string of interest in a 2-D 
+            string array. Returns -1 if not found.</returns>
+        </member>
+        <member name="F:Browser.EquationBalanceForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Browser.EquationBalanceForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Browser.EquationBalanceForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Browser.EulerForm.EulerButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Responds to button click by pulling data from text boxes and calling appropriate method
+            </summary>
+            <param name="sender">The object that send the event argument.</param>
+            <param name="e">The event argument.</param>
+        </member>
+        <member name="F:Browser.EulerForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Browser.EulerForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Browser.EulerForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Browser.FunctionEval.Evaluate(System.String,System.Double)">
+            <summary>
+            Formats expression and substitutes value for variable, then computes result
+            </summary>
+            <param name="expression">The string that represents the expression to be evaluated.</param>
+            <param name="value">The value that the expression will be evaluted at.</param>
+            <returns>Returns the result of Compute_Recursion(expression).</returns>
+        </member>
+        <member name="M:Browser.FunctionEval.Evaluate(System.String)">
+            <summary>
+            Formats expression and computes result
+            </summary>
+            <param name="expression">The string that represents the expression to be evaluated.</param>
+            <returns>Returns the result of Compute_Recursion(Format(expression)).</returns>
+        </member>
+        <member name="M:Browser.FunctionEval.Compute_Recursion(System.String)">
+            <summary>
+            Recursively breaks down expression string until final result can be returned
+            </summary>
+            <param name="CurrentResult">The string that represents the expression to be evaluated.</param>
+            <returns>A recursive call to Compute_Recursion or the final result if at the base case.</returns>
+        </member>
+        <member name="M:Browser.FunctionEval.Format(System.String)">
+            <summary>
+            Replaces numeric characters and pre-evaluates expression with parentheses
+            </summary>
+            <param name="expression">The string that represents the expression to be formated.</param>
+            <returns>The input expression after formatting.</returns>
+        </member>
+        <member name="M:Browser.FunctionEval.Euler(System.String,System.Double,System.Double,System.Double)">
+            <summary>
+            Computes the result of Euler's method on a function with given values
+            </summary>
+            <param name="func">The string that represents the function to be computed.</param>
+            <param name="x">The initial x coordinate.</param>
+            <param name="y">The initial y coordinate.</param>
+            <param name="end">The final x value for the function to be evaluated at.</param>
+            <returns>The value of y once it holds the numberic integral of F(x).</returns>
+        </member>
+        <member name="M:Browser.FunctionEval.Heun(System.String,System.Double,System.Double,System.Double)">
+            <summary>
+            Computes the result of Heun's method on a function with given values
+            </summary>
+            <param name="func">The string that represents the function to be computed.</param>
+            <param name="x">The initial x coordinate.</param>
+            <param name="y">The initial y coordinate.</param>
+            <param name="end">The final x value for the function to be evaluated at.</param>
+            <returns>The value of y once it holds the numberic integral of F(x).</returns>
+        </member>
+        <member name="F:Browser.FunctionEvalForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Browser.FunctionEvalForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Browser.FunctionEvalForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Browser.MolarMassForm.#ctor">
+            <summary>
+            Creates a form with functionality to compute the molar mass.
+            </summary>
+        </member>
+        <member name="M:Browser.MolarMassForm.MolarMassButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Computes molar mass based on an input element and mass.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Browser.MolarMassForm.GetWeightFromDB(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Performs a SQL query that returns the atomic weight of an element
+            from a database based on the input element.
+            </summary>
+            <param name="connection">The database connection information.</param>
+            <param name="element">The symbol for the element of interest.</param>
+            <returns>Returns the atomic weight of the element of interest.</returns>
+        </member>
+        <member name="F:Browser.MolarMassForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Browser.MolarMassForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Browser.MolarMassForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Browser.SK_m_0.WebSearch_Click(System.Object,System.EventArgs)">
+            <summary>
+            Searches for a webpage corresponding to URLBox.Text
+            </summary>
+        </member>
+        <member name="M:Browser.SK_m_0.URLBox_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Calls URLControler if ENTER key is pressed from URLBox
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.URLControler(System.String)">
+            <summary>
+            Navigates to local file or webpage and maintains the forward and back stacks
+            </summary>
+            <param name="url">The url sent for navigation</param>
+        </member>
+        <member name="M:Browser.SK_m_0.aboutToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates and shows an about page
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.userInfoToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Displays information about the current user that is logged in
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.temperatureToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates and displays a temperature converter
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.calculatorToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates and displays an on-screen calculator
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.buttonForward_Click(System.Object,System.EventArgs)">
+            <summary>
+            Navigates to the next page in the forward stack
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.buttonBack_Click(System.Object,System.EventArgs)">
+            <summary>
+            Navigates to the next page in the back stack
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.functionEvalToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates and displays a function evaluator
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.historyToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates an Infoform to display browsing history for the session
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.viewToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates an Infoform to display browsing history for the session
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.clearToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Clears browsing history and resets stacks
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.eulersMethodToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates and displays a numeric integrator based on Euler's method
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.heunsMethodToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates and displays a numeric integrator based on Heun's method
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.chemicalBalancerToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates and displays a chemical equation balancer
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.molarMassToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates and displays a molar mass computer
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.enableToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Enables clipboard copying when a result is computed
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="M:Browser.SK_m_0.disableToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Disables clipboard copying when a result is computed
+            </summary>
+            <param name="sender">The sender object</param>
+            <param name="e">The event argument</param>
+        </member>
+        <member name="F:Browser.SK_m_0.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Browser.SK_m_0.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Browser.SK_m_0.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Browser.Browser.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:Browser.InfoForm.Add(System.Collections.Generic.List{System.String})">
+            <summary>
+            Takes a list as an argument and adds its contents line by line to the InfoForm
+            </summary>
+            <param name="data">A List of Strings the should be displayed to the InfoForm's text information</param>
+        </member>
+        <member name="F:Browser.InfoForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Browser.InfoForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Browser.InfoForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Browser.Login.LoginButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Attempts to authenticate username and passphrase when button is clicked
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event argument sent by button</param>
+        </member>
+        <member name="M:Browser.Login.PassphraseBox_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Attempts to authenticate username and passphrase when ENTER is pressed
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event argument sent by button</param>
+        </member>
+        <member name="M:Browser.Login.GetPasswordFromDB(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Searches for a webpage corresponding to URLBox.Text
+            </summary>
+            <param name="connection">Connection string to the database</param>
+            <param name="user_name">The username pulled from database</param>
+        </member>
+        <member name="F:Browser.Login.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Browser.Login.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Browser.Login.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Browser.TemperatureConverter.Temp_Convert_Click(System.Object,System.EventArgs)">
+            <summary>
+            Computes all temperature values based on the provided temperature value
+            </summary>
+        </member>
+        <member name="F:Browser.TemperatureConverter.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Browser.TemperatureConverter.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Browser.TemperatureConverter.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Browser.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Browser.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Browser.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
