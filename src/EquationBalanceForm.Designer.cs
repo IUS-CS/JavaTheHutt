@@ -31,6 +31,8 @@
             this.BalancedBox = new System.Windows.Forms.TextBox();
             this.ChemicalStringBox = new System.Windows.Forms.TextBox();
             this.Balancebutton = new System.Windows.Forms.Button();
+            this.chemicalLabel = new System.Windows.Forms.Label();
+            this.BalancedLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BalancedBox
@@ -46,7 +48,7 @@
             // ChemicalStringBox
             // 
             this.ChemicalStringBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ChemicalStringBox.Location = new System.Drawing.Point(67, 115);
+            this.ChemicalStringBox.Location = new System.Drawing.Point(67, 132);
             this.ChemicalStringBox.Name = "ChemicalStringBox";
             this.ChemicalStringBox.Size = new System.Drawing.Size(147, 20);
             this.ChemicalStringBox.TabIndex = 0;
@@ -62,11 +64,31 @@
             this.Balancebutton.UseVisualStyleBackColor = true;
             this.Balancebutton.Click += new System.EventHandler(this.Balancebutton_Click);
             // 
+            // chemicalLabel
+            // 
+            this.chemicalLabel.AutoSize = true;
+            this.chemicalLabel.Location = new System.Drawing.Point(67, 113);
+            this.chemicalLabel.Name = "chemicalLabel";
+            this.chemicalLabel.Size = new System.Drawing.Size(79, 13);
+            this.chemicalLabel.TabIndex = 3;
+            this.chemicalLabel.Text = "Enter equation:";
+            // 
+            // BalancedLabel
+            // 
+            this.BalancedLabel.AutoSize = true;
+            this.BalancedLabel.Location = new System.Drawing.Point(125, 43);
+            this.BalancedLabel.Name = "BalancedLabel";
+            this.BalancedLabel.Size = new System.Drawing.Size(52, 13);
+            this.BalancedLabel.TabIndex = 4;
+            this.BalancedLabel.Text = "Balanced";
+            // 
             // EquationBalanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.BalancedLabel);
+            this.Controls.Add(this.chemicalLabel);
             this.Controls.Add(this.Balancebutton);
             this.Controls.Add(this.ChemicalStringBox);
             this.Controls.Add(this.BalancedBox);
@@ -82,5 +104,7 @@
         private System.Windows.Forms.TextBox BalancedBox;
         private System.Windows.Forms.TextBox ChemicalStringBox;
         private System.Windows.Forms.Button Balancebutton;
+        private System.Windows.Forms.Label chemicalLabel;
+        private System.Windows.Forms.Label BalancedLabel;
     }
 }
