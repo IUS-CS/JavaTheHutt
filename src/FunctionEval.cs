@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Browser
 {
-    class FunctionEval
+    public class FunctionEval
     {
         double step = .0001; //step size for numeric integration
 
